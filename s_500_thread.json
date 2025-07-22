@@ -1,0 +1,117 @@
+{
+  "thread_title": "S500 has propellers spinning but doesn't take off",
+  "posts": [
+    {
+      "post_number": 1,
+      "author": "lordreas",
+      "date": "May 28, 2025, 8:44 am",
+      "content": "Hi there,\n\nI have built an almost exact replica of an S500 drone I already have, which is flying fine.  \nThe specs are:\n\n  * PixracerPro (This is the only different component to the existing drone, which has a Pixracer)\n  * 4S battery\n  * Brother Hobby 900 KV Avenger V3 motors\n  * TMotor F45A ESCs (interfaced with Dshot600 on channels Main 1-4)\n\nThe Problem:\n\n  * The main problem is that after arming, I can increase the rotor speed by putting more throttle, but it never reaches as high RPM as the other drone and doesn’t take off. \n    * One sub‑problem is that there is a lot of drift in the state estimation, I don’t really care about odometry but the pitch and roll don’t look stable in the logs. See this log file, where I used Manual mode, so the pitch and roll estimates are used for control.  \nIn the motor outputs section, you can clearly see that right after boot, the motors spin at the same speed, but as the drift accumulates, the drone tries to counteract by throttling some motors down.\n    * In this other log file I have switched on Acro mode, so the estimator is not used for control. Here, we see that the motor outputs are nicely going up to 1.0 in synchrony. But still, the drone doesn’t take off, even though it’s close at full throttle. Also, after roughly 70 % throttle, the rpm don’t audibly increase. I would like to first get this problem sorted, as I see it more problematic.\n\nWhat I’ve tried (nothing helped):\n\n  * Switching to PWM communication between ESC and PixracerPro, and calibrating it.\n  * Measured resistances to rule out that the motors don’t get enough current. Everyting is at roughl 0.1 Ohm, so should be fine\n  * Tightened the lock nuts, from the impression on the props, it looks like the motors are not free spinning.\n  * Throtteling without props. Audibly it sounds like the motors stop spinning faster at the same 70 % throttle.\n  * Made a slow-mo of the props while spinning, they go the right way around.\n\nSome general things comparing the new drone to the old one:\n\n  * the pitch of the ESC bootup sequence seems lower.\n  * the bootup sequence does not go 123 1 3(1 is low pitch, 3 is high pitch) but only 123. So according to the doc the esc does not detect the 0 throttle position and does not signal readiness, even though afterwards it allows spinning the props. But this should not be a problem because I’m using Dshot, should it?\n  * For comparison, this flight log is from the the other functioning drone. The odometry also drifts during throttle‑up but after takeoff, pitch and roll become stable.\n\nI kind of ran out of ideas, so would appreciate ideas a lot for things I could try or I should fix.  \nThanks already!\n\nlordreas",
+      "is_solution": false
+    },
+    {
+      "post_number": 2,
+      "author": "rroche",
+      "date": "May 28, 2025, 3:38 pm",
+      "content": "Hey @TOTON95 can you please take a look here?",
+      "is_solution": false
+    },
+    {
+      "post_number": 3,
+      "author": "TOTON95",
+      "date": "May 28, 2025, 8:16 pm",
+      "content": "@rroche Thank you for tagging me\n\nWelcome, @lordreas. I’ll take a look and see how I can help you. 🙌",
+      "is_solution": false
+    },
+    {
+      "post_number": 4,
+      "author": "sibujacob",
+      "date": "May 29, 2025, 3:15 am",
+      "content": "Kindly send a picture of the drone including the propellers .",
+      "is_solution": false
+    },
+    {
+      "post_number": 5,
+      "author": "lordreas",
+      "date": "May 29, 2025, 10:56 am",
+      "content": "Thanks for helping out! This is a picture of the quad:\n\n[Image attachments]",
+      "is_solution": false
+    },
+    {
+      "post_number": 6,
+      "author": "sibujacob",
+      "date": "May 29, 2025, 11:49 am",
+      "content": "Hi,\n\nYour propellers are installed upside down !! 🙂… you cannot turn the propellers upside to make it clockwise or vice versa …!!",
+      "is_solution": false
+    },
+    {
+      "post_number": 7,
+      "author": "lordreas",
+      "date": "May 29, 2025, 12:04 pm",
+      "content": "I see the lighting and propeller texture is misleading and makes it look odd. But I can reassure they are mounted correctly. See attached picture:\n\n[Image attachment]",
+      "is_solution": false
+    },
+    {
+      "post_number": 8,
+      "author": "sibujacob",
+      "date": "May 29, 2025, 12:48 pm",
+      "content": "Can you advice what is the brand and the size of the propeller. Normally these are sold for fixed wing push configuration models. Did you buy them in pairs like CCW and CW ?\n\nAlso note that for creating lift , we do not require Px4 or Ardupilot firmware for the Quadcopter. These firmwares along with PID tuning are for balancing the body frame.",
+      "is_solution": false
+    },
+    {
+      "post_number": 9,
+      "author": "lordreas",
+      "date": "May 29, 2025, 1:03 pm",
+      "content": "@sibujacob I bought these propellers in CW and CCW configuration, identically to the drone, that is working. They are 9 x 4.5 inch propellers.",
+      "is_solution": false
+    },
+    {
+      "post_number": 10,
+      "author": "sibujacob",
+      "date": "May 29, 2025, 1:17 pm",
+      "content": "You may need to increase the size of the props to 11\" for an S500 drone. 9\" may be small to create the lift .",
+      "is_solution": false
+    },
+    {
+      "post_number": 11,
+      "author": "lordreas",
+      "date": "May 29, 2025, 1:29 pm",
+      "content": "Hi @sibujacob,  \nI already thought about that, but I don’t think this solves the actual problem. The other drone flies just fine with 9-inch props. With 10-inch props, we had clearance problems with the cables under some circumstances. (The drone on the picture is not yet the full build)",
+      "is_solution": false
+    },
+    {
+      "post_number": 12,
+      "author": "TOTON95",
+      "date": "June 2, 2025, 6:26 pm",
+      "content": "@lordreas These are indeed abnormal readings for the state estimator. I will look into that with more detail, I would need some time to study it properly. For the throttle output, have you already tried to swap the Pixracer with the Pixracer Pro into the current setup and see if the issue is still there? Also, the Pixracer Pro may be unable to communicate with the ESC. I’m wondering if you could please share the output of `dshot status`. In the meantime, I will try to schedule a space to use my measurement tools to see if the current firmware/configuration is causing this issue.",
+      "is_solution": false
+    },
+    {
+      "post_number": 13,
+      "author": "lordreas",
+      "date": "June 2, 2025, 7:16 pm",
+      "content": "Hi @TOTON95\n\nthanks for taking the time! I will try to swap the boards on Thursday and see what happens.  \nThe ouput of dshot status is the following:\n\n    nsh> dshot status\n    INFO [dshot] Outputs initialized: yes\n    INFO [dshot] Outputs used: 0xf\n    INFO [dshot] Outputs on: yes\n    dshot: cycle: 16669 events, 230988us elapsed, 13.86us avg, min 12us max 67us 1.201us rms\n    INFO [mixer_module] Param prefix: PWM_MAIN\n    control latency: 16672 events, 4870184us elapsed, 292.12us avg, min 264us max 534us 52.808us rms\n    INFO [mixer_module] Switched to rate_ctrl work queue\n    Channel Configuration:\n    Channel 0: func: 101, value: 0, failsafe: 0, disarmed: 0, min: 109, max: 1999\n    Channel 1: func: 102, value: 0, failsafe: 0, disarmed: 0, min: 109, max: 1999\n    Channel 2: func: 103, value: 0, failsafe: 0, disarmed: 0, min: 109, max: 1999\n    Channel 3: func: 104, value: 0, failsafe: 0, disarmed: 0, min: 109, max: 1999\n    Channel 4: func: 0, value: 0, failsafe: 0, disarmed: 0, min: 109, max: 1999\n    Channel 5: func: 0, value: 0, failsafe: 0, disarmed: 0, min: 109, max: 1999\n    Channel 6: func: 0, value: 0, failsafe: 0, disarmed: 0, min: 109, max: 1999\n    Channel 7: func: 0, value: 0, failsafe: 0, disarmed: 0, min: 109, max: 1999",
+      "is_solution": false
+    },
+    {
+      "post_number": 14,
+      "author": "lordreas",
+      "date": "June 4, 2025, 11:22 am",
+      "content": "Hi all,\n\nI have now had access to an oscilloscope and can confirm that the DSHOT values on the pins correspond to full throttle. So the PX4 is working fine and the problem must be at the ESCs or the motors. I will replace both of them and see what happens.  \nThanks anyway for your time and ideas.\n\nCheers,  \nlordreas",
+      "is_solution": true
+    },
+    {
+      "post_number": 15,
+      "author": "TOTON95",
+      "date": "June 4, 2025, 6:10 pm",
+      "content": "@lordreas Thanks for sharing your findings, I am keeping the task to find what’s is happening with the state estimation for the Pixracer Pro.\n\nBest Regards.",
+      "is_solution": false
+    },
+    {
+      "post_number": 16,
+      "author": "system",
+      "date": "June 11, 2025, 6:10 pm",
+      "content": "This topic was automatically closed 7 days after the last reply. New replies are no longer allowed.",
+      "is_solution": false
+    }
+  ]
+}
