@@ -1,0 +1,395 @@
+{
+  "graphs": [
+    {
+      "title": "About the PX4 Autopilot category",
+      "nodes": [
+        {
+          "id": "t_px4_category",
+          "type": "Thread",
+          "label": "About the PX4 Autopilot category"
+        },
+        {
+          "id": "p21281",
+          "type": "Post",
+          "label": "Post by rroche on 2018-11-14T17:12:27.951Z"
+        },
+        {
+          "id": "p33911",
+          "type": "Post",
+          "label": "Post by rroche on 2019-11-14T16:55:27.616Z"
+        },
+        {
+          "id": "sm_px4",
+          "type": "SoftwareModule",
+          "label": "PX4 Autopilot"
+        },
+        {
+          "id": "th_community",
+          "type": "Theme",
+          "label": "Community"
+        }
+      ],
+      "edges": [
+        {
+          "source": "t_px4_category",
+          "target": "p21281",
+          "label": "HAS_POST"
+        },
+        {
+          "source": "t_px4_category",
+          "target": "p33911",
+          "label": "HAS_POST"
+        },
+        {
+          "source": "t_px4_category",
+          "target": "sm_px4",
+          "label": "FOCUSES_ON"
+        },
+        {
+          "source": "p21281",
+          "target": "sm_px4",
+          "label": "MENTIONS_MODULE"
+        },
+        {
+          "source": "p21281",
+          "target": "th_community",
+          "label": "HAS_TAG"
+        }
+      ]
+    },
+    {
+      "title": "What is the /fmu/out/vehicle_status_v1?",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "title": "Help Needed for SIYI A8 Mini Integration with PX4 (v1.15)",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "title": "Checking output PWM for ESCs",
+      "nodes": [
+        {
+          "id": "thread_93903",
+          "type": "Thread",
+          "label": "Checking output PWM for ESCs"
+        },
+        {
+          "id": "post_93903",
+          "type": "Post",
+          "label": "Post by Chetan_Dahal asking how to check PWM output to ESCs"
+        },
+        {
+          "id": "post_93942",
+          "type": "Post",
+          "label": "Post by JulianOes providing commands to check PWM output"
+        },
+        {
+          "id": "theme_pwm_output",
+          "type": "Theme",
+          "label": "Checking PWM Output"
+        },
+        {
+          "id": "hw_esc",
+          "type": "HardwareModule",
+          "label": "ESC (Electronic Speed Controller)"
+        },
+        {
+          "id": "sw_qgc",
+          "type": "SoftwareModule",
+          "label": "QGroundControl (QGC)"
+        },
+        {
+          "id": "sw_mavlink_console",
+          "type": "SoftwareModule",
+          "label": "MAVLink Console"
+        },
+        {
+          "id": "sw_px4",
+          "type": "SoftwareModule",
+          "label": "PX4"
+        },
+        {
+          "id": "fw_px4_v1.15.4",
+          "type": "FirmwareVersion",
+          "label": "v1.15.4"
+        },
+        {
+          "id": "cmd_pwm_info",
+          "type": "ActionCommand",
+          "label": "pwm info"
+        },
+        {
+          "id": "cmd_pwm_out_status",
+          "type": "ActionCommand",
+          "label": "pwm_out status"
+        },
+        {
+          "id": "cmd_dshot_status",
+          "type": "ActionCommand",
+          "label": "dshot status"
+        },
+        {
+          "id": "cmd_px4io_status",
+          "type": "ActionCommand",
+          "label": "px4io status"
+        },
+        {
+          "id": "hw_aux_ports",
+          "type": "HardwareModule",
+          "label": "AUX ports"
+        },
+        {
+          "id": "hw_io_main_ports",
+          "type": "HardwareModule",
+          "label": "IO/MAIN ports"
+        }
+      ],
+      "edges": [
+        {
+          "source": "thread_93903",
+          "target": "post_93903",
+          "label": "HAS_POST"
+        },
+        {
+          "source": "thread_93903",
+          "target": "post_93942",
+          "label": "HAS_POST"
+        },
+        {
+          "source": "thread_93903",
+          "target": "theme_pwm_output",
+          "label": "FOCUSES_ON"
+        },
+        {
+          "source": "post_93903",
+          "target": "hw_esc",
+          "label": "MENTIONS_MODULE"
+        },
+        {
+          "source": "post_93903",
+          "target": "sw_qgc",
+          "label": "MENTIONS_MODULE"
+        },
+        {
+          "source": "post_93903",
+          "target": "sw_mavlink_console",
+          "label": "MENTIONS_MODULE"
+        },
+        {
+          "source": "post_93903",
+          "target": "sw_px4",
+          "label": "MENTIONS_MODULE"
+        },
+        {
+          "source": "sw_px4",
+          "target": "fw_px4_v1.15.4",
+          "label": "RUNS_VERSION"
+        },
+        {
+          "source": "post_93903",
+          "target": "cmd_pwm_info",
+          "label": "INVOKES_ACTION"
+        },
+        {
+          "source": "post_93942",
+          "target": "post_93903",
+          "label": "IS_SOLUTION"
+        },
+        {
+          "source": "post_93942",
+          "target": "cmd_pwm_out_status",
+          "label": "INVOKES_ACTION"
+        },
+        {
+          "source": "post_93942",
+          "target": "cmd_dshot_status",
+          "label": "INVOKES_ACTION"
+        },
+        {
+          "source": "post_93942",
+          "target": "cmd_px4io_status",
+          "label": "INVOKES_ACTION"
+        },
+        {
+          "source": "cmd_pwm_out_status",
+          "target": "hw_aux_ports",
+          "label": "MENTIONS_MODULE"
+        },
+        {
+          "source": "cmd_px4io_status",
+          "target": "hw_io_main_ports",
+          "label": "MENTIONS_MODULE"
+        }
+      ]
+    },
+    {
+      "title": "VTOL/TAILSITTER PX4 motors differ speed higher thrust settingt",
+      "nodes": [
+        {
+          "id": "thread_vtol_motor_speed",
+          "type": "Thread",
+          "label": "VTOL/TAILSITTER PX4 motors differ speed higher thrust settingt"
+        },
+        {
+          "id": "post_93895",
+          "type": "Post",
+          "label": "Post by tobiokanobi describing differing motor speeds on a VTOL/Tailsitter at high thrust."
+        },
+        {
+          "id": "theme_motor_speed_imbalance",
+          "type": "Theme",
+          "label": "Motor speed imbalance increases with thrust"
+        },
+        {
+          "id": "theme_constant_roll",
+          "type": "Theme",
+          "label": "Constant roll making the aircraft unflyable"
+        },
+        {
+          "id": "hw_vtol_tailsitter",
+          "type": "HardwareModule",
+          "label": "VTOL / Tailsitter"
+        },
+        {
+          "id": "hw_bicopter_tilting_motors",
+          "type": "HardwareModule",
+          "label": "Bicopter with tilting motors"
+        },
+        {
+          "id": "hw_esc",
+          "type": "HardwareModule",
+          "label": "ESC (Electronic Speed Controller)"
+        },
+        {
+          "id": "hw_fc",
+          "type": "HardwareModule",
+          "label": "Flight Controller (FC)"
+        },
+        {
+          "id": "sw_px4",
+          "type": "SoftwareModule",
+          "label": "PX4"
+        },
+        {
+          "id": "param_mc_rollrate",
+          "type": "Parameter",
+          "label": "MC_rollrate"
+        },
+        {
+          "id": "env_stabilized_mode",
+          "type": "Environment",
+          "label": "STABILIZED mode"
+        },
+        {
+          "id": "env_ground_test",
+          "type": "Environment",
+          "label": "Testing while fixed to ground"
+        },
+        {
+          "id": "action_check_config",
+          "type": "ActionCommand",
+          "label": "Checked FC installation and configuration allocation matrix"
+        },
+        {
+          "id": "action_check_response",
+          "type": "ActionCommand",
+          "label": "Checked correct motor response to manual tilting"
+        },
+        {
+          "id": "action_reduce_rollrate",
+          "type": "ActionCommand",
+          "label": "Reduced MC_rollrate to 0.01"
+        }
+      ],
+      "edges": [
+        {
+          "source": "thread_vtol_motor_speed",
+          "target": "post_93895",
+          "label": "HAS_POST"
+        },
+        {
+          "source": "thread_vtol_motor_speed",
+          "target": "theme_motor_speed_imbalance",
+          "label": "FOCUSES_ON"
+        },
+        {
+          "source": "thread_vtol_motor_speed",
+          "target": "sw_px4",
+          "label": "FOCUSES_ON"
+        },
+        {
+          "source": "thread_vtol_motor_speed",
+          "target": "hw_vtol_tailsitter",
+          "label": "FOCUSES_ON"
+        },
+        {
+          "source": "post_93895",
+          "target": "theme_motor_speed_imbalance",
+          "label": "FOCUSES_ON"
+        },
+        {
+          "source": "post_93895",
+          "target": "theme_constant_roll",
+          "label": "FOCUSES_ON"
+        },
+        {
+          "source": "post_93895",
+          "target": "hw_vtol_tailsitter",
+          "label": "MENTIONS_MODULE"
+        },
+        {
+          "source": "post_93895",
+          "target": "hw_bicopter_tilting_motors",
+          "label": "MENTIONS_MODULE"
+        },
+        {
+          "source": "post_93895",
+          "target": "hw_esc",
+          "label": "MENTIONS_MODULE"
+        },
+        {
+          "source": "post_93895",
+          "target": "hw_fc",
+          "label": "MENTIONS_MODULE"
+        },
+        {
+          "source": "post_93895",
+          "target": "sw_px4",
+          "label": "MENTIONS_MODULE"
+        },
+        {
+          "source": "post_93895",
+          "target": "param_mc_rollrate",
+          "label": "MENTIONS_PARAM"
+        },
+        {
+          "source": "post_93895",
+          "target": "env_stabilized_mode",
+          "label": "DESCRIBES_ENVIRONMENT"
+        },
+        {
+          "source": "post_93895",
+          "target": "env_ground_test",
+          "label": "DESCRIBES_ENVIRONMENT"
+        },
+        {
+          "source": "post_93895",
+          "target": "action_check_config",
+          "label": "INVOKES_ACTION"
+        },
+        {
+          "source": "post_93895",
+          "target": "action_check_response",
+          "label": "INVOKES_ACTION"
+        },
+        {
+          "source": "post_93895",
+          "target": "action_reduce_rollrate",
+          "label": "INVOKES_ACTION"
+        }
+      ]
+    }
+  ]
+}
