@@ -21,7 +21,7 @@
 # import google.generativeai as genai
 
 # # === Config ===
-# API_KEY = "AIzaSyAhLs6i8vR6MgZpknLcZzE_cRfuT3qIxHk"
+# API_KEY = os.getenv("GOOGLE_API_KEY")
 # MERGED_FILE = "output/merged_threads.json"
 # KG_JSON_PATH = "output/knowledge_graph.json"
 # KG_GRAPHML_PATH = "output/knowledge_graph.graphml"
