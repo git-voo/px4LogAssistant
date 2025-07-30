@@ -8,7 +8,7 @@ with open("output/thread_graphs.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 # Choose which thread to visualize (0 = first one)
-thread_index = 4
+thread_index = 2
 thread = data["graphs"][thread_index]
 nodes = thread["nodes"]
 edges = thread["edges"]
@@ -39,7 +39,7 @@ plt.title(f"Thread Graph: {thread['title'][:80]}..." if len(
 plt.axis("off")
 plt.tight_layout()
 os.makedirs("viz", exist_ok=True)
-plt.savefig("viz/thread_graph_visualization.png")
+plt.savefig("viz/solved_thread_graph_visualization.png")
 plt.show()
 
 print("✅ Graph visualization saved to viz/thread_graph_visualization.png")

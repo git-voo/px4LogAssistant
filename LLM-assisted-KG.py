@@ -12,7 +12,7 @@
 # 4. Parse and store graph data
 # 5. Save results in knowledge_graph.json and optionally export GraphML
 
-# Author: ChatGPT + Victor
+# Author: Victor Onoja
 # """
 
 # import json
@@ -67,50 +67,6 @@
 # }
 # """
 
-# # === Load Data ===
-# with open(MERGED_FILE, "r", encoding="utf-8") as f:
-#     threads = json.load(f)
-
-# all_nodes = []
-# all_edges = []
-
-# # === Process Threads ===
-# for thread in threads:
-#     user_prompt = {
-#         "title": thread.get("title"),
-#         "posts": [
-#             {
-#                 "post_id": post.get("post_id"),
-#                 "author": post.get("author"),
-#                 "is_solution": post.get("is_solution", False),
-#                 "raw": post.get("content")
-#             } for post in thread.get("posts", [])
-#         ]
-#     }
-
-#     response = model.generate_content([
-#         SYSTEM_PROMPT,
-#         f"""Thread JSON:
-# {json.dumps(user_prompt, indent=2)}"""
-#     ])
-
-#     try:
-#         parsed = json.loads(response.text)
-#         all_nodes.extend(parsed.get("nodes", []))
-#         all_edges.extend(parsed.get("edges", []))
-#     except Exception as e:
-#         print(
-#             f"[ERROR] Could not parse thread '{thread.get('title')}'\n{e}\nRaw response: {response.text[:500]}...")
-
-#     time.sleep(1)  # polite delay
-
-# # === Save JSON Output ===
-# Path("output").mkdir(parents=True, exist_ok=True)
-# with open(KG_JSON_PATH, "w", encoding="utf-8") as f:
-#     json.dump({"nodes": all_nodes, "edges": all_edges}, f, indent=2)
-
-# print(f"✅ Knowledge Graph saved to {KG_JSON_PATH}")
-
 
 import json
 import os
@@ -135,17 +91,22 @@ Each thread should be turned into its own subgraph with:
     - id (string)
     - type (string) [Thread, Post, Theme, SoftwareModule, HardwareModule, Parameter, ActionCommand, ErrorCode, Environment, FirmwareVersion, UserRole, Solution]
     - label (string, natural language)
+    - content (string, detailed text or excerpt from thread or post)
+   
+    For "Post" nodes, include the full text of the post as content.
+    For other nodes (like Theme, Parameter, etc.), include relevant descriptions, excerpts, or the post context that mentioned it. 
+
 3. A list of "edges" with:
     - source (id)
     - target (id)
     - label (relationship type like HAS_POST, FOCUSES_ON, MENTIONS_PARAM, IS_SOLUTION, HAS_TAG, RUNS_VERSION, DESCRIBES_ENVIRONMENT, INVOKES_ACTION, MENTIONS_MODULE, MENTIONS_ERROR_CODE)
 
-Avoid repetition. Prioritize meaningful concepts.
+Avoid repetition. Prioritize meaningful concepts, use only the relationships outlined.
 """
 
 output_graphs = []
 
-for i, thread in enumerate(threads[:5]):  # process only first 5 threads
+for i, thread in enumerate(threads[:40]):  # process only first 5 threads: to be updated later
     print(
         f"\n--- Processing Thread {i+1}/{len(threads)}: {thread['title']} ---")
 
@@ -196,7 +157,7 @@ Posts:
 
 # Save as JSON (graph-of-graphs format)
 os.makedirs("output", exist_ok=True)
-with open("output/thread_graphs.json", "w", encoding="utf-8") as f:
+with open("bulk_output/contented_thread_graphs.json", "w", encoding="utf-8") as f:
     json.dump({"graphs": output_graphs}, f, indent=2)
 
 print("\n🎉 Done! Saved extracted graphs to output/thread_graphs.json")

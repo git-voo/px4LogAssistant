@@ -4,56 +4,46 @@
       "title": "About the PX4 Autopilot category",
       "nodes": [
         {
-          "id": "t_px4_category",
+          "id": "thread_about_the_px4_autopilot_category",
           "type": "Thread",
           "label": "About the PX4 Autopilot category"
         },
         {
-          "id": "p21281",
+          "id": "post_21281",
           "type": "Post",
-          "label": "Post by rroche on 2018-11-14T17:12:27.951Z"
+          "label": "Welcome to the PX4 autopilot discussion forums, this is an open and inclusive space build by the community for the community."
         },
         {
-          "id": "p33911",
+          "id": "post_33911",
           "type": "Post",
-          "label": "Post by rroche on 2019-11-14T16:55:27.616Z"
+          "label": ""
         },
         {
-          "id": "sm_px4",
+          "id": "softwaremodule_px4_autopilot",
           "type": "SoftwareModule",
           "label": "PX4 Autopilot"
-        },
-        {
-          "id": "th_community",
-          "type": "Theme",
-          "label": "Community"
         }
       ],
       "edges": [
         {
-          "source": "t_px4_category",
-          "target": "p21281",
+          "source": "thread_about_the_px4_autopilot_category",
+          "target": "post_21281",
           "label": "HAS_POST"
         },
         {
-          "source": "t_px4_category",
-          "target": "p33911",
+          "source": "thread_about_the_px4_autopilot_category",
+          "target": "post_33911",
           "label": "HAS_POST"
         },
         {
-          "source": "t_px4_category",
-          "target": "sm_px4",
+          "source": "thread_about_the_px4_autopilot_category",
+          "target": "softwaremodule_px4_autopilot",
           "label": "FOCUSES_ON"
         },
         {
-          "source": "p21281",
-          "target": "sm_px4",
+          "source": "post_21281",
+          "target": "softwaremodule_px4_autopilot",
           "label": "MENTIONS_MODULE"
-        },
-        {
-          "source": "p21281",
-          "target": "th_community",
-          "label": "HAS_TAG"
         }
       ]
     },
@@ -64,14 +54,336 @@
     },
     {
       "title": "Help Needed for SIYI A8 Mini Integration with PX4 (v1.15)",
-      "nodes": [],
-      "edges": []
+      "nodes": [
+        {
+          "id": "thread_1",
+          "type": "Thread",
+          "label": "Help Needed for SIYI A8 Mini Integration with PX4 (v1.15)"
+        },
+        {
+          "id": "post_93917",
+          "type": "Post",
+          "label": "Post by Ertugrul_S (Question)"
+        },
+        {
+          "id": "post_93940",
+          "type": "Post",
+          "label": "Post by JulianOes (Solution)"
+        },
+        {
+          "id": "theme_integration",
+          "type": "Theme",
+          "label": "SIYI A8 Mini Integration with PX4"
+        },
+        {
+          "id": "theme_survey",
+          "type": "Theme",
+          "label": "Automated Survey Mission with Time-Based Capture"
+        },
+        {
+          "id": "theme_video_stream",
+          "type": "Theme",
+          "label": "Live Video Streaming over Cellular"
+        },
+        {
+          "id": "hw_siyi_a8",
+          "type": "HardwareModule",
+          "label": "SIYI A8 Mini 4K Gimbal Camera"
+        },
+        {
+          "id": "hw_cube_orange",
+          "type": "HardwareModule",
+          "label": "Cube Orange"
+        },
+        {
+          "id": "hw_rpi4",
+          "type": "HardwareModule",
+          "label": "Raspberry Pi 4"
+        },
+        {
+          "id": "sw_px4",
+          "type": "SoftwareModule",
+          "label": "PX4"
+        },
+        {
+          "id": "fw_px4_v1_15",
+          "type": "FirmwareVersion",
+          "label": "PX4 v1.15.x"
+        },
+        {
+          "id": "sw_qgc",
+          "type": "SoftwareModule",
+          "label": "QGroundControl"
+        },
+        {
+          "id": "sw_mavsdk",
+          "type": "SoftwareModule",
+          "label": "MAVSDK"
+        },
+        {
+          "id": "sw_camera_manager",
+          "type": "SoftwareModule",
+          "label": "MAVSDK-based Camera Manager for SIYI A8"
+        },
+        {
+          "id": "sw_vpn",
+          "type": "SoftwareModule",
+          "label": "VPN (e.g., Wireguard)"
+        },
+        {
+          "id": "env_cellular",
+          "type": "Environment",
+          "label": "Cellular (SIM card) Internet"
+        },
+        {
+          "id": "action_trigger_capture",
+          "type": "ActionCommand",
+          "label": "Time-based Image Capture"
+        },
+        {
+          "id": "action_update_fw",
+          "type": "ActionCommand",
+          "label": "Update Gimbal and Camera Firmware"
+        },
+        {
+          "id": "cmd_gimbal_test",
+          "type": "ActionCommand",
+          "label": "gimbal test"
+        },
+        {
+          "id": "cmd_mavlink_status",
+          "type": "ActionCommand",
+          "label": "mavlink status"
+        },
+        {
+          "id": "param_mav_x_mode",
+          "type": "Parameter",
+          "label": "MAV_x_MODE"
+        },
+        {
+          "id": "param_mav_x_flowctrl",
+          "type": "Parameter",
+          "label": "MAV_x_FLOWCTRL"
+        },
+        {
+          "id": "param_mav_x_forwarding",
+          "type": "Parameter",
+          "label": "MAV_x_FORWARDING"
+        },
+        {
+          "id": "param_ser_y_baud",
+          "type": "Parameter",
+          "label": "SER_y_BAUD"
+        },
+        {
+          "id": "param_mnt_mode_in",
+          "type": "Parameter",
+          "label": "MNT_MODE_IN"
+        },
+        {
+          "id": "param_mnt_mode_out",
+          "type": "Parameter",
+          "label": "MNT_MODE_OUT"
+        }
+      ],
+      "edges": [
+        {
+          "source": "thread_1",
+          "target": "post_93917",
+          "label": "HAS_POST"
+        },
+        {
+          "source": "thread_1",
+          "target": "post_93940",
+          "label": "HAS_POST"
+        },
+        {
+          "source": "thread_1",
+          "target": "theme_integration",
+          "label": "FOCUSES_ON"
+        },
+        {
+          "source": "post_93917",
+          "target": "theme_integration",
+          "label": "FOCUSES_ON"
+        },
+        {
+          "source": "post_93917",
+          "target": "theme_survey",
+          "label": "FOCUSES_ON"
+        },
+        {
+          "source": "post_93917",
+          "target": "theme_video_stream",
+          "label": "FOCUSES_ON"
+        },
+        {
+          "source": "post_93917",
+          "target": "hw_siyi_a8",
+          "label": "MENTIONS_MODULE"
+        },
+        {
+          "source": "post_93917",
+          "target": "hw_cube_orange",
+          "label": "MENTIONS_MODULE"
+        },
+        {
+          "source": "post_93917",
+          "target": "hw_rpi4",
+          "label": "MENTIONS_MODULE"
+        },
+        {
+          "source": "post_93917",
+          "target": "sw_qgc",
+          "label": "MENTIONS_MODULE"
+        },
+        {
+          "source": "post_93917",
+          "target": "sw_mavsdk",
+          "label": "MENTIONS_MODULE"
+        },
+        {
+          "source": "post_93917",
+          "target": "fw_px4_v1_15",
+          "label": "MENTIONS_MODULE"
+        },
+        {
+          "source": "post_93917",
+          "target": "env_cellular",
+          "label": "DESCRIBES_ENVIRONMENT"
+        },
+        {
+          "source": "post_93940",
+          "target": "theme_integration",
+          "label": "IS_SOLUTION"
+        },
+        {
+          "source": "post_93940",
+          "target": "theme_survey",
+          "label": "IS_SOLUTION"
+        },
+        {
+          "source": "post_93940",
+          "target": "theme_video_stream",
+          "label": "IS_SOLUTION"
+        },
+        {
+          "source": "post_93940",
+          "target": "action_update_fw",
+          "label": "RECOMMENDS"
+        },
+        {
+          "source": "post_93940",
+          "target": "param_mav_x_mode",
+          "label": "MENTIONS_PARAM"
+        },
+        {
+          "source": "post_93940",
+          "target": "param_mav_x_flowctrl",
+          "label": "MENTIONS_PARAM"
+        },
+        {
+          "source": "post_93940",
+          "target": "param_mav_x_forwarding",
+          "label": "MENTIONS_PARAM"
+        },
+        {
+          "source": "post_93940",
+          "target": "param_ser_y_baud",
+          "label": "MENTIONS_PARAM"
+        },
+        {
+          "source": "post_93940",
+          "target": "param_mnt_mode_in",
+          "label": "MENTIONS_PARAM"
+        },
+        {
+          "source": "post_93940",
+          "target": "param_mnt_mode_out",
+          "label": "MENTIONS_PARAM"
+        },
+        {
+          "source": "post_93940",
+          "target": "cmd_gimbal_test",
+          "label": "INVOKES_ACTION"
+        },
+        {
+          "source": "post_93940",
+          "target": "cmd_mavlink_status",
+          "label": "INVOKES_ACTION"
+        },
+        {
+          "source": "post_93940",
+          "target": "sw_camera_manager",
+          "label": "MENTIONS_MODULE"
+        },
+        {
+          "source": "post_93940",
+          "target": "sw_vpn",
+          "label": "MENTIONS_MODULE"
+        },
+        {
+          "source": "hw_cube_orange",
+          "target": "sw_px4",
+          "label": "RUNS_ON"
+        },
+        {
+          "source": "sw_px4",
+          "target": "fw_px4_v1_15",
+          "label": "RUNS_VERSION"
+        },
+        {
+          "source": "hw_siyi_a8",
+          "target": "hw_cube_orange",
+          "label": "CONNECTS_TO"
+        },
+        {
+          "source": "hw_siyi_a8",
+          "target": "hw_rpi4",
+          "label": "CONNECTS_TO"
+        },
+        {
+          "source": "hw_rpi4",
+          "target": "env_cellular",
+          "label": "HAS_CONNECTIVITY"
+        },
+        {
+          "source": "sw_qgc",
+          "target": "theme_survey",
+          "label": "USED_FOR"
+        },
+        {
+          "source": "sw_mavsdk",
+          "target": "hw_rpi4",
+          "label": "RUNS_ON"
+        },
+        {
+          "source": "sw_camera_manager",
+          "target": "sw_mavsdk",
+          "label": "BASED_ON"
+        },
+        {
+          "source": "sw_camera_manager",
+          "target": "hw_siyi_a8",
+          "label": "CONTROLS"
+        },
+        {
+          "source": "theme_survey",
+          "target": "action_trigger_capture",
+          "label": "REQUIRES"
+        },
+        {
+          "source": "sw_px4",
+          "target": "action_trigger_capture",
+          "label": "SUPPORTS"
+        }
+      ]
     },
     {
       "title": "Checking output PWM for ESCs",
       "nodes": [
         {
-          "id": "thread_93903",
+          "id": "thread_1",
           "type": "Thread",
           "label": "Checking output PWM for ESCs"
         },
@@ -83,10 +395,10 @@
         {
           "id": "post_93942",
           "type": "Post",
-          "label": "Post by JulianOes providing commands to check PWM output"
+          "label": "Post by JulianOes providing solution commands"
         },
         {
-          "id": "theme_pwm_output",
+          "id": "theme_pwm_check",
           "type": "Theme",
           "label": "Checking PWM Output"
         },
@@ -101,11 +413,6 @@
           "label": "QGroundControl (QGC)"
         },
         {
-          "id": "sw_mavlink_console",
-          "type": "SoftwareModule",
-          "label": "MAVLink Console"
-        },
-        {
           "id": "sw_px4",
           "type": "SoftwareModule",
           "label": "PX4"
@@ -113,12 +420,22 @@
         {
           "id": "fw_px4_v1.15.4",
           "type": "FirmwareVersion",
-          "label": "v1.15.4"
+          "label": "PX4 v1.15.4"
+        },
+        {
+          "id": "sw_mavlink_console",
+          "type": "SoftwareModule",
+          "label": "MAVLink Console"
         },
         {
           "id": "cmd_pwm_info",
           "type": "ActionCommand",
           "label": "pwm info"
+        },
+        {
+          "id": "solution_commands",
+          "type": "Solution",
+          "label": "Use specific status commands for different port types and protocols"
         },
         {
           "id": "cmd_pwm_out_status",
@@ -141,6 +458,11 @@
           "label": "AUX ports"
         },
         {
+          "id": "param_dshot",
+          "type": "Parameter",
+          "label": "DShot Protocol"
+        },
+        {
           "id": "hw_io_main_ports",
           "type": "HardwareModule",
           "label": "IO/MAIN ports"
@@ -148,18 +470,18 @@
       ],
       "edges": [
         {
-          "source": "thread_93903",
+          "source": "thread_1",
           "target": "post_93903",
           "label": "HAS_POST"
         },
         {
-          "source": "thread_93903",
+          "source": "thread_1",
           "target": "post_93942",
           "label": "HAS_POST"
         },
         {
-          "source": "thread_93903",
-          "target": "theme_pwm_output",
+          "source": "thread_1",
+          "target": "theme_pwm_check",
           "label": "FOCUSES_ON"
         },
         {
@@ -174,41 +496,46 @@
         },
         {
           "source": "post_93903",
-          "target": "sw_mavlink_console",
-          "label": "MENTIONS_MODULE"
-        },
-        {
-          "source": "post_93903",
           "target": "sw_px4",
           "label": "MENTIONS_MODULE"
         },
         {
-          "source": "sw_px4",
+          "source": "post_93903",
           "target": "fw_px4_v1.15.4",
           "label": "RUNS_VERSION"
         },
         {
           "source": "post_93903",
+          "target": "sw_mavlink_console",
+          "label": "MENTIONS_MODULE"
+        },
+        {
+          "source": "post_93903",
           "target": "cmd_pwm_info",
-          "label": "INVOKES_ACTION"
+          "label": "MENTIONS_ACTION"
         },
         {
           "source": "post_93942",
+          "target": "solution_commands",
+          "label": "IS_SOLUTION"
+        },
+        {
+          "source": "solution_commands",
           "target": "post_93903",
           "label": "IS_SOLUTION"
         },
         {
-          "source": "post_93942",
+          "source": "solution_commands",
           "target": "cmd_pwm_out_status",
           "label": "INVOKES_ACTION"
         },
         {
-          "source": "post_93942",
+          "source": "solution_commands",
           "target": "cmd_dshot_status",
           "label": "INVOKES_ACTION"
         },
         {
-          "source": "post_93942",
+          "source": "solution_commands",
           "target": "cmd_px4io_status",
           "label": "INVOKES_ACTION"
         },
@@ -216,6 +543,11 @@
           "source": "cmd_pwm_out_status",
           "target": "hw_aux_ports",
           "label": "MENTIONS_MODULE"
+        },
+        {
+          "source": "cmd_dshot_status",
+          "target": "param_dshot",
+          "label": "MENTIONS_PARAM"
         },
         {
           "source": "cmd_px4io_status",
@@ -228,49 +560,39 @@
       "title": "VTOL/TAILSITTER PX4 motors differ speed higher thrust settingt",
       "nodes": [
         {
-          "id": "thread_vtol_motor_speed",
+          "id": "thread_1",
           "type": "Thread",
           "label": "VTOL/TAILSITTER PX4 motors differ speed higher thrust settingt"
         },
         {
           "id": "post_93895",
           "type": "Post",
-          "label": "Post by tobiokanobi describing differing motor speeds on a VTOL/Tailsitter at high thrust."
+          "label": "Post by tobiokanobi describing motor speed difference issue on a VTOL/Tailsitter"
         },
         {
-          "id": "theme_motor_speed_imbalance",
+          "id": "theme_motor_speed_diff",
           "type": "Theme",
-          "label": "Motor speed imbalance increases with thrust"
+          "label": "Left motor runs faster than right motor with increasing thrust"
         },
         {
           "id": "theme_constant_roll",
           "type": "Theme",
-          "label": "Constant roll making the aircraft unflyable"
+          "label": "Vehicle has a constant roll, making it unflyable"
         },
         {
           "id": "hw_vtol_tailsitter",
           "type": "HardwareModule",
-          "label": "VTOL / Tailsitter"
-        },
-        {
-          "id": "hw_bicopter_tilting_motors",
-          "type": "HardwareModule",
-          "label": "Bicopter with tilting motors"
-        },
-        {
-          "id": "hw_esc",
-          "type": "HardwareModule",
-          "label": "ESC (Electronic Speed Controller)"
-        },
-        {
-          "id": "hw_fc",
-          "type": "HardwareModule",
-          "label": "Flight Controller (FC)"
+          "label": "VTOL / Tailsitter (bicopter with tilting motors and elevons)"
         },
         {
           "id": "sw_px4",
           "type": "SoftwareModule",
-          "label": "PX4"
+          "label": "PX4 Autopilot"
+        },
+        {
+          "id": "action_troubleshoot",
+          "type": "ActionCommand",
+          "label": "User performed troubleshooting: checked FC, allocation matrix, STABILIZED mode response, reduced MC_rollrate, and noted ESCs don't need calibration."
         },
         {
           "id": "param_mc_rollrate",
@@ -278,55 +600,40 @@
           "label": "MC_rollrate"
         },
         {
-          "id": "env_stabilized_mode",
-          "type": "Environment",
+          "id": "param_alloc_matrix",
+          "type": "Parameter",
+          "label": "Configuration Allocation Matrix"
+        },
+        {
+          "id": "sw_stabilized_mode",
+          "type": "SoftwareModule",
           "label": "STABILIZED mode"
         },
         {
           "id": "env_ground_test",
           "type": "Environment",
-          "label": "Testing while fixed to ground"
+          "label": "Vehicle tested while fixed to the ground"
         },
         {
-          "id": "action_check_config",
-          "type": "ActionCommand",
-          "label": "Checked FC installation and configuration allocation matrix"
-        },
-        {
-          "id": "action_check_response",
-          "type": "ActionCommand",
-          "label": "Checked correct motor response to manual tilting"
-        },
-        {
-          "id": "action_reduce_rollrate",
-          "type": "ActionCommand",
-          "label": "Reduced MC_rollrate to 0.01"
+          "id": "hw_esc",
+          "type": "HardwareModule",
+          "label": "Electronic Speed Controller (ESC)"
         }
       ],
       "edges": [
         {
-          "source": "thread_vtol_motor_speed",
+          "source": "thread_1",
           "target": "post_93895",
           "label": "HAS_POST"
         },
         {
-          "source": "thread_vtol_motor_speed",
-          "target": "theme_motor_speed_imbalance",
-          "label": "FOCUSES_ON"
-        },
-        {
-          "source": "thread_vtol_motor_speed",
-          "target": "sw_px4",
-          "label": "FOCUSES_ON"
-        },
-        {
-          "source": "thread_vtol_motor_speed",
-          "target": "hw_vtol_tailsitter",
+          "source": "thread_1",
+          "target": "theme_motor_speed_diff",
           "label": "FOCUSES_ON"
         },
         {
           "source": "post_93895",
-          "target": "theme_motor_speed_imbalance",
+          "target": "theme_motor_speed_diff",
           "label": "FOCUSES_ON"
         },
         {
@@ -337,37 +644,12 @@
         {
           "source": "post_93895",
           "target": "hw_vtol_tailsitter",
-          "label": "MENTIONS_MODULE"
-        },
-        {
-          "source": "post_93895",
-          "target": "hw_bicopter_tilting_motors",
-          "label": "MENTIONS_MODULE"
-        },
-        {
-          "source": "post_93895",
-          "target": "hw_esc",
-          "label": "MENTIONS_MODULE"
-        },
-        {
-          "source": "post_93895",
-          "target": "hw_fc",
-          "label": "MENTIONS_MODULE"
-        },
-        {
-          "source": "post_93895",
-          "target": "sw_px4",
-          "label": "MENTIONS_MODULE"
-        },
-        {
-          "source": "post_93895",
-          "target": "param_mc_rollrate",
-          "label": "MENTIONS_PARAM"
-        },
-        {
-          "source": "post_93895",
-          "target": "env_stabilized_mode",
           "label": "DESCRIBES_ENVIRONMENT"
+        },
+        {
+          "source": "post_93895",
+          "target": "action_troubleshoot",
+          "label": "INVOKES_ACTION"
         },
         {
           "source": "post_93895",
@@ -375,19 +657,29 @@
           "label": "DESCRIBES_ENVIRONMENT"
         },
         {
-          "source": "post_93895",
-          "target": "action_check_config",
-          "label": "INVOKES_ACTION"
+          "source": "hw_vtol_tailsitter",
+          "target": "sw_px4",
+          "label": "MENTIONS_MODULE"
         },
         {
-          "source": "post_93895",
-          "target": "action_check_response",
-          "label": "INVOKES_ACTION"
+          "source": "action_troubleshoot",
+          "target": "param_mc_rollrate",
+          "label": "MENTIONS_PARAM"
         },
         {
-          "source": "post_93895",
-          "target": "action_reduce_rollrate",
-          "label": "INVOKES_ACTION"
+          "source": "action_troubleshoot",
+          "target": "param_alloc_matrix",
+          "label": "MENTIONS_PARAM"
+        },
+        {
+          "source": "action_troubleshoot",
+          "target": "sw_stabilized_mode",
+          "label": "MENTIONS_MODULE"
+        },
+        {
+          "source": "action_troubleshoot",
+          "target": "hw_esc",
+          "label": "MENTIONS_MODULE"
         }
       ]
     }
