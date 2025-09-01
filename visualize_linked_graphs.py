@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import os
 
 # Load the linked graphs
-with open("bulk_output/thread_graphs_linked_75.json", "r", encoding="utf-8") as f:
+with open("output/thread_graphs_linked.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 graphs = data["graphs"]
