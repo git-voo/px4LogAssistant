@@ -3,7 +3,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 # Load the linked graph data
-with open("output/thread_graphs_linked.json", "r", encoding="utf-8") as f:
+with open("output/all_threads_graphs_linked.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 graphs = data["graphs"]

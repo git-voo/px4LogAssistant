@@ -5,7 +5,7 @@ import numpy as np
 from sentence_transformers import SentenceTransformer, util
 
 # Reload graph-of-graphs data
-with open("bulk_output/contented_thread_graphs.json", "r", encoding="utf-8") as f:
+with open("output/all_threads_graphs.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 graphs = data["graphs"]
@@ -48,7 +48,7 @@ for i in range(len(graphs)):
 
 # Save updated graph
 os.makedirs("output", exist_ok=True)
-with open("bulk_output/thread_graphs_linked_75.json", "w", encoding="utf-8") as f:
+with open("output/all_threads_graphs_linked.json", "w", encoding="utf-8") as f:
     json.dump({"graphs": graphs}, f, indent=2)
 
 # Display result for user inspection

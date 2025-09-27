@@ -73,14 +73,49 @@ import os
 import google.generativeai as genai
 from dotenv import load_dotenv
 import re
+from itertools import cycle
+
+# === Load environment variables ===
 load_dotenv()
 
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
-model = genai.GenerativeModel("gemini-2.5-pro")
+# === Configure API key rotation ===
+api_keys = [
+    os.getenv("GOOGLE_API_KEY_1"),
+    os.getenv("GOOGLE_API_KEY_2"),
+    os.getenv("GOOGLE_API_KEY_3"),
+    os.getenv("GOOGLE_API_KEY_4"),
+    os.getenv("GOOGLE_API_KEY_5"),
+    os.getenv("GOOGLE_API_KEY_6"),
+]
 
+key_cycle = cycle(api_keys)
+current_key = next(key_cycle)
+
+# === Gemini Model Config ===
+def configure_model():
+    genai.configure(api_key=current_key)
+    return genai.GenerativeModel("gemini-2.5-pro")
+
+model = configure_model()
+
+# === Load threads ===
 with open("output/merged_threads.json", "r", encoding="utf-8") as f:
     threads = json.load(f)
 
+# === Load existing progress if any ===
+output_path = "output/all_threads_graphs.json"
+if os.path.exists(output_path):
+    with open(output_path, "r", encoding="utf-8") as f:
+        existing_graphs = json.load(f)["graphs"]
+else:
+    existing_graphs = []
+    
+print("🔄 Loaded existing graphs:", len(existing_graphs))
+ 
+starting_index = len(existing_graphs)
+print(f"🔄 Resuming from thread index {starting_index}...")
+
+# === Schema instructions ===
 schema_instructions = """
 You are a knowledge graph extractor.
 Extract structured graph data from each thread following this schema:
@@ -91,24 +126,27 @@ Each thread should be turned into its own subgraph with:
     - id (string)
     - type (string) [Thread, Post, Theme, SoftwareModule, HardwareModule, Parameter, ActionCommand, ErrorCode, Environment, FirmwareVersion, UserRole, Solution]
     - label (string, natural language)
-    - content (string, detailed text or excerpt from thread or post)
-   
-    For "Post" nodes, include the full text of the post as content.
-    For other nodes (like Theme, Parameter, etc.), include relevant descriptions, excerpts, or the post context that mentioned it. 
-
+    - content (string) — main descriptive info
 3. A list of "edges" with:
     - source (id)
     - target (id)
     - label (relationship type like HAS_POST, FOCUSES_ON, MENTIONS_PARAM, IS_SOLUTION, HAS_TAG, RUNS_VERSION, DESCRIBES_ENVIRONMENT, INVOKES_ACTION, MENTIONS_MODULE, MENTIONS_ERROR_CODE)
 
-Avoid repetition. Prioritize meaningful concepts, use only the relationships outlined.
+Avoid repetition. Prioritize meaningful concepts.
 """
 
-output_graphs = []
+output_graphs = existing_graphs.copy()
 
-for i, thread in enumerate(threads[:40]):  # process only first 5 threads: to be updated later
-    print(
-        f"\n--- Processing Thread {i+1}/{len(threads)}: {thread['title']} ---")
+# === Function to rotate keys ===
+def rotate_key():
+    global current_key, model
+    current_key = next(key_cycle)
+    model = configure_model()
+    print("🔁 Switched to new API key")
+
+# === Main thread processing ===
+for i, thread in enumerate(threads[starting_index:], start=starting_index):
+    print(f"\n--- Processing Thread {i+1}/{len(threads)}: {thread['title']} ---")
 
     prompt = f"""
 {schema_instructions}
@@ -123,41 +161,37 @@ Posts:
         if post.get("is_solution"):
             prompt += "(This post is marked as the solution)\n"
 
-    try:
-        response = model.generate_content(
-            prompt, generation_config={"temperature": 0.4})
-        structured = response.text
+    while True:
+        try:
+            response = model.generate_content(prompt, generation_config={"temperature": 0.4})
+            structured = response.text
+            match = re.search(r"{.*}", structured, re.DOTALL)
+            if not match:
+                raise ValueError("No JSON object found in LLM response.")
 
-        # # Parse the JSON safely
-        # parsed = json.loads(structured[structured.find("{"):])
-        # output_graphs.append({
-        #     "title": thread["title"],
-        #     "nodes": parsed.get("nodes", []),
-        #     "edges": parsed.get("edges", [])
-        # })
-        # print(f"✅ Finished: {thread['title']}")
+            json_text = match.group()
+            parsed = json.loads(json_text)
 
-        # Use regex to extract JSON block
-        match = re.search(r"{.*}", structured, re.DOTALL)
-        if not match:
-            raise ValueError("No JSON object found in LLM response.")
+            output_graphs.append({
+                "title": thread["title"],
+                "nodes": parsed.get("nodes", []),
+                "edges": parsed.get("edges", [])
+            })
+            print(f"✅ Finished: {thread['title']}")
+            break  # Success, break out of retry loop
 
-        json_text = match.group()
-        parsed = json.loads(json_text)
+        except Exception as e:
+            error_str = str(e).lower()
+            print(f"⚠️ Error: {e}")
+            if "quota" in error_str or "429" in error_str:
+                rotate_key()
+                continue  # Retry same thread with next key
+            else:
+                print(f"❌ Skipping thread '{thread['title']}' due to error.")
+                break
 
-        output_graphs.append({
-            "title": thread["title"],
-            "nodes": parsed.get("nodes", []),
-            "edges": parsed.get("edges", [])
-        })
-        print(f"✅ Finished: {thread['title']}")
+    # Save intermediate output after each thread
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump({"graphs": output_graphs}, f, indent=2)
 
-    except Exception as e:
-        print(f"❌ Error processing thread '{thread['title']}': {e}")
-
-# Save as JSON (graph-of-graphs format)
-os.makedirs("output", exist_ok=True)
-with open("bulk_output/contented_thread_graphs.json", "w", encoding="utf-8") as f:
-    json.dump({"graphs": output_graphs}, f, indent=2)
-
-print("\n🎉 Done! Saved extracted graphs to output/thread_graphs.json")
+print("\n🎉 All available threads processed. Graphs saved to output/all_thread_graphs.json")
