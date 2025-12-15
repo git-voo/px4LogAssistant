@@ -1,0 +1,482 @@
+[
+  {
+    "title": "Takeoff problem after hand-launch in Mission Mode",
+    "query": "I have a question about takeoff with PX4?"
+  },
+  {
+    "title": "Connecting ESCs with different max voltages to FMU PWM out pins",
+    "query": "Hi, I am trying to control 4 ESCs with a Pixhawk 4 and power management board (PMB)?"
+  },
+  {
+    "title": "Differences between FMU PWM vs I/O PWM?",
+    "query": "Hello, can someone please explain the difference between FMU PWM and I/O PWM? From the Pixhawk documentation I know which one to use depends on the airframe reference but just trying to understand the differences a bit more?"
+  },
+  {
+    "title": "Using HITL and GAZEBO with own SOLIDWORKS model",
+    "query": "Hi all, I am using my own Solidworks model by the?"
+  },
+  {
+    "title": "Which airframe/ outputs to control a skiff on clothesline mooring?",
+    "query": "I’ve got a Carolina 16 skiff that I keep on a clothesline mooring in tidal waters?"
+  },
+  {
+    "title": "Implementation for Pivot Turning on PX4",
+    "query": "I am wondering if there is any way to achieve pivot turns using PX4 Autopilot? What I mean by Pivot Turn can be seen in Ardupilot documentation: Tuning Pivot Turns — Rover documentation In brief, it is a manner of turning where the robot first slows down while reaching a waypoint, then turns towards the next waypoint and then moves straight towards it, in a skid-steering (differential drive) setup?"
+  },
+  {
+    "title": "Takeoff denied! (mav_cmd_nav_takeoff temporarily rejected)",
+    "query": "Hi everyone, I´m having trouble trying to take-off remotely my hexacopeter and I can’t find a solution?"
+  },
+  {
+    "title": "Dshot max throttle",
+    "query": "I’m currently working on a project involving a quad rotor and was wondering if it is possible to specify a maximum throttle value when working with Dshot ESCs?"
+  },
+  {
+    "title": "QGC cannot get Holybro F9P RTK fix",
+    "query": "Hi team, I am trying to set up the Holybro F9P RTK modules on my drone, but it seems QGC cannot get RTK fix correctly?"
+  },
+  {
+    "title": "Integrating ESP32 to PX4",
+    "query": "Hi, I am doing a project which is to design and demonstrate the concept of urban outdoor drone navigation without reliance on GPS?"
+  },
+  {
+    "title": "PX4/Avoidance - Why the algorithms are standalone?",
+    "query": "Hi! I’m completely new with PX4, so I’m very sorry if this question is duplicate or if it has already been answered somewhere, but I did not find any information myself?"
+  },
+  {
+    "title": "Cmake error when building older tags",
+    "query": "Hi! I’m sorry, I’m new to the community and am not that good yet?"
+  },
+  {
+    "title": "Drone spin on itself",
+    "query": "hello everyone , i have an issue that my drone spin on itself , always the same direction , am using an X configuration , i have checked the motors , ESC’s , but no problem , what can the problem be ? am using a SIMULINK model , no PID , only controlling throttle , but still spin on itself"
+  },
+  {
+    "title": "PX4 1.12.3: Diverging Motor RPM on new Quad",
+    "query": "Trying again… no replies Uneven motor RPM: NXP Hovergames New Build Multicopter 🛸 Quadcopter using NXP Hovergames kit?"
+  },
+  {
+    "title": "Problem with global position estimation",
+    "query": "Hi! I have a VTOL (15kg) ,and i try to optimize it，but i can’t solve is: narrow interior space, so it has problems with high temperature and unreasonable wiring (main power wires close to GNSS and compass modules) I’ve had a few successful and stable flights before this time (with the occasional airspeed sensor failure, I think because the airspeed sensor is too close to the multi-rotor prop), but this time I’ve had a strange problem: After the front transition timed out (the reason was that I lowered VT_F_TRANS_THR), I switched to manual mode, tried the front transition again, switched to LOITER mode, and then switched to MISSION mode,after few seconds, the aircraft rolled over and automatically switched to MC, the QGC message shows: [commander] Stopping compass use! Check calibration on landing [commander] Failsafe enabled: no global position Because the battery capacity of the multi-rotor is small, I use manual control to land it at the current position Log: https://logs?"
+  },
+  {
+    "title": "PX4 FMU V5 -STM32F765 - firmware error",
+    "query": "hello …after updated firmware unable to do any setup… keep beeping and before the firmware update everything was normal and able to fly?"
+  },
+  {
+    "title": "Accel clipping",
+    "query": "Hello, I keep getting the warning ‘Accel 0 clipping, not safe to fly!’ whenever I fly my drone in manual, position, or mission mode?"
+  },
+  {
+    "title": "Uneven motor RPM: NXP Hovergames New Build",
+    "query": "Quadcopter using NXP Hovergames kit?"
+  },
+  {
+    "title": "PX4-ROS2 Bridge with Qualcomm Flight RB5",
+    "query": "Hello, I am new to working and developing on drones and am trying to use the PX4-ROS2 bridge to communicate with my Qualcomm Flight RB5 drone?"
+  },
+  {
+    "title": "No global position",
+    "query": "log link: https://logs?"
+  },
+  {
+    "title": "Arming quadcopter during free fall",
+    "query": "Hello?"
+  },
+  {
+    "title": "L1 Controller",
+    "query": "Hello everyone, I am trying to understand L1 Controller but couldn’t find documentation like mentioned in this topic : Fixed wing position control L1 controller I know inputs and output of L1 Controller?"
+  },
+  {
+    "title": "PX4 install of Gazebo",
+    "query": "Hi I’m trying to make px4 run with gazebo?"
+  },
+  {
+    "title": "Pixhawk4 New airframe",
+    "query": "Hi I am Takumi?"
+  },
+  {
+    "title": "ESC startup problem with LiPo",
+    "query": "Hello everyone?"
+  },
+  {
+    "title": "Where add a specific line in the cmake file?",
+    "query": "Hi! I’m trying to add my own simple application in the PX4 Firmware but when I launch it with the command “make px4_sitl_default gazebo”, I can’t see my new command in the list I can use so I can’t make it work?"
+  },
+  {
+    "title": "Disarm bug according to landing speed",
+    "query": "Hi?"
+  },
+  {
+    "title": "Command to Take Picture Gazebo Simulated Survey Camera",
+    "query": "Hello, I am new to PX4 and Gazebo?"
+  },
+  {
+    "title": "Arming denied! velocity/position invalid(Indoor navigation)",
+    "query": "I am trying to send local odometry position to the vehicle_visual_odometry subscriber?"
+  },
+  {
+    "title": "PX4 + rover + mission",
+    "query": "Hello, for about a year I am playing with my huge lawn mover machine… controlled by Pixhawk 4 + Sabertooth Dual + FLySky + SikRadio and QGC… I am able to control my ROVER with RC FLySky… I can connect and see all parameters through QGC… and I am almost there to have RTK fix (need to find good location for base gps antenna)?"
+  },
+  {
+    "title": "Ccatch permission denied?",
+    "query": "I’m trying to install the PX4 development, bit run into the ccatch permission denied?"
+  },
+  {
+    "title": "PWM AUX Actuator Outputs with HIL",
+    "query": "Hello, I would appreciate some help to find out how can I enable the PWM AUX Tab from the Actuators section in QGC?"
+  },
+  {
+    "title": "No current reading with Cube Orange, working on Ardupilot",
+    "query": "Hey, I’ve just made the switch to PX4 from Ardupilot, but now the power module is constantly reading 0 current (voltage works fine)?"
+  },
+  {
+    "title": "Motors not spinning on new build. Strange servo output values",
+    "query": "Hello, I have built a new Hexa which refuses to spin its motors?"
+  },
+  {
+    "title": "Firmware for a Research VTOL Prototype",
+    "query": "Hi, I’m a PhD student and a PX4 beginner working on a novel VTOL Tailsitter prototype?"
+  },
+  {
+    "title": "PX4 always shows Not Ready",
+    "query": "Hi, I am using Cube Orange with the Latest PX4 firmware , Here3 GPS connected as CAN I am having issues in getting the PX4 autopilot to work?"
+  },
+  {
+    "title": "uORB Explained : Part 3 - PX4 Explained Blog Post Series",
+    "query": "Hello Community! Part 3 of the uORB Explained Series has just been published! Twitter_post__uORB-ExplainedSocial-PX4Parameters_3 1024×512 170 KB In Part 3, we discuss about what uORB Publishing and Subscribing actually does under the hood?"
+  },
+  {
+    "title": "Slow RFD868x-EU",
+    "query": "Hi, Does anyone have experience with the following telemetry radio? We are experiencing extremely slow communication?"
+  },
+  {
+    "title": "The solution of illegally built's identification",
+    "query": "It’s too poor efficiency to find out all the illegally built if u use the tranditional way ,such as walk or drive the car to check, take photo for forensicsing by phone?"
+  },
+  {
+    "title": "Offboard hovering issue (with good position estimation)",
+    "query": "I encountered the hovering issue with offboard flight mode?"
+  },
+  {
+    "title": "Differences between compiled files",
+    "query": "Hi, I have compiled PX4 from the source and see that there are several files for the firmware?"
+  },
+  {
+    "title": "Problems with flight tests with px4",
+    "query": "I had a weird problem with the PX4, I wanted to do the autotuning with a 6 arm drone and with a cube Orange controller with PX4?"
+  },
+  {
+    "title": "Precision landing problem",
+    "query": "Hi?"
+  },
+  {
+    "title": "Altimeter NRA 15 + Pixhawk 4",
+    "query": "Good afternoon There is a desire to install an altimeter on Pixhawk 4 There is an altimeter NRA 15 from Nanoradar It connects via UART The question is how to enable it in the firmware through the parameter tree? They sent instructions, but it is for firmware from Ardupilot Help me, I’m not good at writing a driver?"
+  },
+  {
+    "title": "Problem Quadrotor always oscilation after re-power for a while",
+    "query": "The Quadrotor (Cube Orange + Jetson Nano 2GB) always oscillation at the first takeoff after plug in the battery?"
+  },
+  {
+    "title": "Sending commands with companion computer to pixhawk",
+    "query": "Hi, These 4 variables are used in the vehicle_command UORB message: target_system, target_component, source_system and source_component number?"
+  },
+  {
+    "title": "Couldn't show video from Gazebo",
+    "query": "Hi, so I’m trying to show the video from typhoon_h480 that’s simulated in gazebo?"
+  },
+  {
+    "title": "Construction project process record",
+    "query": "Record the construction project process by the drone, and then compose all the video to a time-lapse video, not only it can display the whole process information of construction realistically, present the progress of each cycle condition clearly , but also it provide a visual basis for the settlement of engineering projects?"
+  },
+  {
+    "title": "3D flight review with rviz",
+    "query": "Inorder to make flight log playback more clear?"
+  },
+  {
+    "title": "VTOL Fixed Wing Drone + LiDAR",
+    "query": "Hi guys, here’s the product solution about drone and lidar wanna share with you?"
+  },
+  {
+    "title": "Bad GPS Position Arm Problem",
+    "query": "Hello?"
+  },
+  {
+    "title": "Mission planner servo control",
+    "query": "Hello, I want to move the mg90 model servo up to a certain angle value while autonomously controlling it in the mission planner?"
+  },
+  {
+    "title": "Using 4in1 ESC as power mangement board",
+    "query": "Hello?"
+  },
+  {
+    "title": "Cannot flash firmware to Pixhawk5x on MacOS catalina",
+    "query": "Hi all, Recently I got Pixhawk5x and tried to flash it with customized fmu-v5x firmware based on v1?"
+  },
+  {
+    "title": "How to change default gravity value?",
+    "query": "Do you know guys how to change the default value of the gravity acceleration in px4? Thanks in advance"
+  },
+  {
+    "title": "RKT GPS Sampling Rate Increasing",
+    "query": "Hi team, I am using a Holybro F9P RKT (using u-box) setup for one of my drones?"
+  },
+  {
+    "title": "MAGx_ROT vs driver's R parameter",
+    "query": "What is the relation between the MAGx_ROT value and the R value of the MAG driver? If I set the correct R value when starting the driver of the magnetometer, do I also need to set MAGx_ROT, or will the MAGx_ROT “inherit” the R value?"
+  },
+  {
+    "title": "How to exexute PX4 SITL in ROS workspace",
+    "query": "I am working on simulation and how can ı use PX4-Autopilot with my custom catkin_workspace ?"
+  },
+  {
+    "title": "How to PX4 drone move forward, backward, left, and right using mavros?",
+    "query": "I can take off and land the drone through mavros by rosrun mavros mavcmd takeoffcur 0 0 5, rosrun mavros mavcmd landcur 0 0 and { “op”: “call_service”, “id”:\"/arming\", “service”: “/mavros/cmd/takeoff”, “args”:{ “min_pitch”: 0, “yaw”: 0, “latitude”: 8?"
+  },
+  {
+    "title": "Need help with HITL setup",
+    "query": "Dear all, I’m having issues with the HITL setup?"
+  },
+  {
+    "title": "Poor behavior for quadroter in hold mode",
+    "query": "Hi everyone, I’m new here in this community, I found many advices are helpful on this website, so I’m here to ask for some help, many thanks for stopping by?"
+  },
+  {
+    "title": "SITL test setup/teardown",
+    "query": "Hi, I’m want to write a SITL unit test (according to this doc ), with several test cases (by test case, i mean a single function called with ‘ut_run_test’) to test a single custom module, so that each test case has a ‘fresh’ state, and test cases might last for a few seconds (because the module timing)?"
+  },
+  {
+    "title": "Crossfire/ExpressLRS on Holybro PX4",
+    "query": "HI! Is there any actual support for CrossFire/ExpressLRS on FMUv5x? For reference, I am planning to use a Holybro Pixhawk 5X and BetaFPV Nano receiver?"
+  },
+  {
+    "title": "Fixed Wing HITL with Gazebo",
+    "query": "I have a Fixed Wing model built in Gazebo to use with HITL in a Pixhawk 5x?"
+  },
+  {
+    "title": "SimpleRTK2B Heading RTK (with correction) configuration",
+    "query": "Hello, I’m trying to get PX4 to work with 2 simplertk2b in RTK + Heading configuration?"
+  },
+  {
+    "title": "How can I enable control_allocator?",
+    "query": "I downloaded px4 1?"
+  },
+  {
+    "title": "Using r9mx reciever with pixhawk 4",
+    "query": "HOW CAN WE CONNECT AN S PORT F PORT OF FR SKY R9MX RECIEVER TO PIXHAWK 4 FLIGHT CONTROLLER?"
+  },
+  {
+    "title": "uORB Explained : Part 2 - PX4 Explained Blog Post Series",
+    "query": "Hello Community! Part 2 of the uORB Explained Series has just been published! It covers: What actually is a concept of ‘topic’ in uORB? Lower level implementations related to topics registration Please check it out! PX4 Autopilot – 29 Apr 22 PX4 uORB Explained : Part 2 - PX4 Autopilot Welcome back to the uORB Explained Part 2! In Part 1, we covered the basic uORB concepts like messages, topics and modules, and how to use them?"
+  },
+  {
+    "title": "Is Pixhawk 2.4.8 fully supported by px4?",
+    "query": "Hello, This is not entirely clear to me from what I read on the internet?"
+  },
+  {
+    "title": "Unstable Motors output - Cube Orange Hexarotor x",
+    "query": "Hi, I’m the beginner in the PX4?"
+  },
+  {
+    "title": "SITL build with 32bit configuration",
+    "query": "Hello, I want to have a SITL build with 32bit config?"
+  },
+  {
+    "title": "Community Survey : Challenges getting started with PX4",
+    "query": "New Community Survey! Hi everyone, Junwoo here! I’m a Dronecode PX4 Development and Community Coordinator intern My goal for my internship is to create the best PX4 Ecosystem as possible for everyone?"
+  },
+  {
+    "title": "SunnySky XS X3515S Brushless Motors",
+    "query": "SunnySky XS X3515S Brushless Motors I want to buy Electronic speed control (ESC) Is there a suggestion?"
+  },
+  {
+    "title": "Compass Calibration warning",
+    "query": "Hello dear community?"
+  },
+  {
+    "title": "Hexacopter Configuration X and +",
+    "query": "hello, I’m currently designing a hexacopter and I’ve made some research but I couldn’t find which configuration is better , I started my design with an X configuration but I don’t know which will be better for control and stability, also in case of a motor failure?"
+  },
+  {
+    "title": "Problem with ADC",
+    "query": "Good afternoon?"
+  },
+  {
+    "title": "First VTOL flight advice",
+    "query": "Hi, I am trying to figure out the VTOL functionality, namely what to expect when trying to do a transition?"
+  },
+  {
+    "title": "UAVCAN servo support?",
+    "query": "I have an application requiring use of CAN based servo actuators of control surfaces?"
+  },
+  {
+    "title": "Offboard vicon tracking suddently flight toward one direction",
+    "query": "Hello friends, – I am using px4 on pixhawk flight in in-door env, with vicon, one wired thing is sometimes when I control it flight several times to tacking the trajectory, it suddenly fly to one direction, here is one flight log, can someone has some insights what cause this issue ? https://review?"
+  },
+  {
+    "title": "Land mode behavior",
+    "query": "Hi! Whenever I switch my drone to LAND mode whether it is during manual flight or during an autonomous mission, the drone loses control and jumps suddenly to a very high altitude?"
+  },
+  {
+    "title": "Gimbal control (PWM) via Mount settings",
+    "query": "Hello! I’m having difficulty getting the ‘Mount’ settings correct to use a Mavlink command from my joystick to control the pitch of my camera gimbal via PWM and could use some help My setup: Running PX4 (latest firmware) on a VOXL Flight over a microhard connection from QGC?"
+  },
+  {
+    "title": "Vehicle mass and Inertia, airframe setup for real drone",
+    "query": "Hi everyone, I am new to px4 autopilot and I have the problem that how I can setup the vehicle mass and Inertia to my real drone and also the airframe like arm length?"
+  },
+  {
+    "title": "Loss of position failsafe behavior",
+    "query": "Hi! I’m working on a project that concerns the GPS functionality in the drone?"
+  },
+  {
+    "title": "PX4&ESC Protocol Issue",
+    "query": "Hi, I’m working on qav250 with pixhawk4-mini?"
+  },
+  {
+    "title": "Motor spins up to any set value PWM_AUX_MAX",
+    "query": "Greetings Working on DC10 quad on pix32v5 by holybro with Hobbywing XRotor Pro 40A So when i arm motor spins up to any set value PWM_AUX_MAX 4 month have past Pls looking for solution!"
+  },
+  {
+    "title": "Can the ROS2 by RTPS bridge realize the real PX4 offboard mode flight?",
+    "query": "Such as title, according to the PX4 developer guide, in the sitl, PX4 can control the UAV to fly in offboard mode through rtps bridge?"
+  },
+  {
+    "title": "can i programm the px4",
+    "query": "hi, my name is ozone?"
+  },
+  {
+    "title": "Camera_trigger test",
+    "query": "Can someone help me by indicating how to activate the camera trigger test like this in the image trigger 782×601 90?"
+  },
+  {
+    "title": "Mode mission",
+    "query": "Hi, i’m having problem with mission mode, when return to land, my drone doesn’t make landing but switch to position mode and I have to do RC landing bokeh_plot 840×400 35?"
+  },
+  {
+    "title": "Why do I keep getting WARN [PreFlightCheck] Preflight: not enough GPS Satellites when using fake_gps?",
+    "query": "Hello everyone, I’m trying to use fake_gps in SITL mode in gazebo?"
+  },
+  {
+    "title": "Preflight Fail: Accel Range, hold still on arming",
+    "query": "I’ve built a custom model on PX4, and made sure to add all the required set of links, joint, plugins, params and other things?"
+  },
+  {
+    "title": "ImportError running mission_test.py (following tutorial))",
+    "query": "Hi First of all, I’m new to ubuntu, PX4 and ROS, so I hope you can be very clear and bear with me?"
+  },
+  {
+    "title": "Single Telemetry connected with two or more GCS",
+    "query": "Hello professionals?"
+  },
+  {
+    "title": "Where is gazebo/SITL log file located?",
+    "query": "Hi everyone, hope you are having a great time?"
+  },
+  {
+    "title": "NMEA0183 PX4 support?",
+    "query": "I am trying to send fake gps data, from python to pixhawk 2?"
+  },
+  {
+    "title": "Single motor cutout on CubeOrange, v1.13 (Swarm Drone)",
+    "query": "Hi all, This weekend my team, partners, and I completed approximately 1,700 flights on v1?"
+  },
+  {
+    "title": "Why is mc_weight calculated using time in the Backward transition?",
+    "query": "Hi, everyone?"
+  },
+  {
+    "title": "Start mission via MavLink no QGC connected",
+    "query": "I tried to upload and start missions through Mavlink but encountered some issues?"
+  },
+  {
+    "title": "How to get UI LED status over MAVLINK? (UI LED)",
+    "query": "Hi, I have Cube Orange autopilot and working on a VTOL UAV with up-to-date PX4 software?"
+  },
+  {
+    "title": "Error: static assertion failed: atomic is not lock-free for the given type T",
+    "query": "I get the following building on RPI4, Debian OS, any suggestions? Thank you very much?"
+  },
+  {
+    "title": "uORB Explained: Part 1 - PX4 Explained Blog Post Series",
+    "query": "Community, our fantastic intern @junwoo0914 , just published another excellent tutorial blog covering the basics of uORB?"
+  },
+  {
+    "title": "Enable VTOL Positive pitch while hovering and use pusher motor",
+    "query": "Hi, It is possible to adjust some parameters so that VTOL always has a small, positive pitch angle, even in multirotor mode? We want it so that we are more sure any wind wont cause the plane to start pitching down, and so that we are more secure when trying to transition into FW, as we haven’t tried that yet?"
+  },
+  {
+    "title": "PX4 Firmware v1.10.2 file",
+    "query": "Hi everyone, I have a project using Pixhawk 5 and I want to work with UAV Toolbox Support Package for PX4® Autopilots in Matlab/Simulink?"
+  },
+  {
+    "title": "Multi-drone system using single px4",
+    "query": "I’m trying to create a system that has 4 drones that are all controlled by one px4?"
+  },
+  {
+    "title": "Custom FW flight behavior via app",
+    "query": "I am working on creating an app that is activated via the console that will do the following behavior: -Turn off the motors -Pitch the aircraft up at 10 deg/s -Then activate a servo channel at a specific point to deploy a parachute Assuming the aircraft is flying in stabilized mode, what uORB message do I publish to if I want to control the pitch rate? All of the ones that I have tried seem to publish but have no reaction from the aircraft in SIL simulation?"
+  },
+  {
+    "title": "Cannot find px4_fmu-v3_rtps in make targets",
+    "query": "I wanted to try using ros2 and offboard mode, but apparently the default build does not come with rtps enabled, so I downloaded the source code and tried to build px4 for my controller?"
+  },
+  {
+    "title": "FCU CPU and RAM",
+    "query": "Can someone please briefly explain how the flight performance should differ with a higher processor and bigger size RAM memory ?"
+  },
+  {
+    "title": "What are the contents that is actually copied from the ROMFS to the ROM",
+    "query": "What are the contents that is actually copied from the ROMFS to the ROM? Is there a way to view the contents in the ROM directly?"
+  },
+  {
+    "title": "Only one motor spinning",
+    "query": "Hi, I bought a Pixhawk 5x?"
+  },
+  {
+    "title": "Swan k1 mapping camera connection",
+    "query": "Hello, I wonder if someone has already managed to connect a mapping camera to the swan k1 pro with the pwm port? swan k1 900×1600 134 KB pwm 900×1600 104 KB"
+  },
+  {
+    "title": "Pixracer shoots up in offboard",
+    "query": "Hey guys, i have been trying to use pixracer with xavier nx and giving position commands?"
+  },
+  {
+    "title": "Is it possible to use PM07 only as Power Distributor for Pixhawk 5x?",
+    "query": "Hi, I have an X500 Frame Kit with a PM07 with the motor cables already soldered on?"
+  },
+  {
+    "title": "CMD: Unexpected command 520, result 0 and CMD: Unexpected command 176, result 0",
+    "query": "Hi, I try to roslaunch mavros px4?"
+  },
+  {
+    "title": "EKF2 Height Requirement",
+    "query": "The EKF2 has a dependency on height data ( EKF2_HGT_MODE )?"
+  },
+  {
+    "title": "Precision landing with downward camera",
+    "query": "Hi everyone, I’m trying to performe a precision landing using a downlooking camera?"
+  },
+  {
+    "title": "Repositioning to GPS location",
+    "query": "I am wondering what will be the best way to reposition the vehicle to a GPS coordinates with a controlled velocity?"
+  },
+  {
+    "title": "EKF2 Height Sensor \"Reset To\" Options",
+    "query": "Hi Everybody, I was checking the Ekf::controlHeightSensorTimeouts() method to see the height sensor switching algorithms in case of hgt_fusion_timeout?"
+  },
+  {
+    "title": "Pixracer Pro does not recognize battery status",
+    "query": "Hello, I am having a problem with Pixracer Pro not being able to monitor battery voltage/current?"
+  },
+  {
+    "title": "CUAV X7 Connector Part Number",
+    "query": "Hello, I want to know the Part number of the I/O connector that is used in the CUAV X7 Flight Controller Base board?"
+  },
+  {
+    "title": "Pixracer Pro not detected on QGC",
+    "query": "I have been using Qground control with pixracer R15 without any issue, and I wanted to try pixracer pro, but its not being recognized in QGC on USB?"
+  }
+]

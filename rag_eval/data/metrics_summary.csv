@@ -1,0 +1,5 @@
+Metric,Average Score,Standard Deviation,Pass Rate (%),Total Tests
+Faithfulness,0.958,0.084,100.0,104
+Contextual Precision,0.577,0.494,57.69,104
+Contextual Recall,0.144,0.351,14.42,104
+Answer Relevancy,0.89,0.186,95.19,104

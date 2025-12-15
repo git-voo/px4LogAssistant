@@ -1,0 +1,3141 @@
+{
+  "summary": {
+    "num_tests": 106,
+    "pass_rate": 0.12264150943396226,
+    "avg_score": 0.6421722676900793
+  },
+  "details": [
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the retrieval context, with no contradictions found. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00 because the first node in the retrieval contexts was highly relevant, directly addressing the user's query by mentioning key elements like a 'Takeoff Issue', 'Mission Mode', and 'Hand Launch'."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the expected output (sentence 1) details specific safety checks like 'arming', 'GPS lock', and 'throttle', which are not mentioned in the node(s) in retrieval context, even though node 5 mentions 'Takeoff' and 'Mission Mode'."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.9,
+          "passed": true,
+          "reason": "The score is 0.90 because the output is highly relevant to the user's drone problem, but it loses a point for making specific assumptions about the user's hardware and firmware, which were not mentioned in the input."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context. It's an excellent score, as no contradictions were found!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only retrieved node is irrelevant. The first node in the retrieval contexts is not helpful because it \"never addresses the user's specific question about the safety of connecting ESCs with different maximum voltage ratings,\" making the entire retrieval set unhelpful for answering the query."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output, which advises against mixing ESCs with different voltage ratings, is unsupported by the provided context. Although the nodes in retrieval context mention related topics like ESC wiring (node 4) and power (node 5), none contain the specific warning needed to form the sentence."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the response is perfectly relevant to the user's question. Excellent job staying on topic!"
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context. Excellent work, no contradictions were found!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the first and only node in the retrieval contexts is irrelevant. This node was ranked highest despite the fact that it 'does not provide any information about the functional differences between' the FMU and I/O PWM outputs, failing to answer the core question in the input."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output is unsupported by the provided context. Although several nodes in retrieval context (e.g., 1st, 3rd, 5th) mention 'FMU PWM OUT' and 'I/O PWM OUT', they lack the critical information that FMU supports DShot while I/O handles standard PWM and is managed by a co-processor."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "This is an excellent response! It's perfectly relevant and directly answers the user's specific question about the differences between FMU and I/O PWM outputs on a Pixhawk flight controller."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": true,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.8,
+          "passed": true,
+          "reason": "The score is 0.80 because the output provides an incorrect command format for running a custom model, which should append the model name to the target rather than passing it as a separate argument. It also mistakenly links a 'Model Not Found' error to physical property issues, when the context states that error is related to the 'sitl_target.cmake' file."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the retrieval was flawless! The first and only node in the retrieval contexts is perfectly relevant, as it directly addresses using 'SOLID (CAD Software)', exporting a 'Custom Drone URDF' or '.sdf file', and using it in 'SITL Gazebo' for simulation."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Excellent! The score is 1.0 because the expected output is fully supported by the node(s) in retrieval context, skillfully synthesizing information from node 3 and node 4 to form the answer."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.5714285714285714,
+          "passed": true,
+          "reason": "The score is 0.57 because the output fundamentally misunderstood the user's request, providing instructions for a SITL (Software-In-The-Loop) simulation instead of the requested HITL (Hardware-In-The-Loop) simulation. The score is not lower because it likely addressed other aspects of the query, such as using a custom model with Gazebo, but the core process was incorrect."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": true,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is fully supported by the retrieval context, and no contradictions were identified. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00! The top-ranked node in the retrieval contexts is an excellent match, as it directly discusses '[Theme] PX4 Boat Control' and control methods like '[Theme] Differential Thrust', which is exactly what the user asked about."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00, which is fantastic! The entire expected output is perfectly supported, as it correctly synthesizes information about boat/rover configurations, differential thrust, and rudders from nodes 1, 2, and 5 in retrieval context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "This is a perfect score! The response was entirely relevant to the user's question and contained no unnecessary information. Excellent job!"
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context. Fantastic work, no contradictions were found!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the single retrieved node is irrelevant to the user's specific query. The first node in the retrieval contexts is unhelpful because \"none of the documents mention the specific concept of 'pivot turning' or 'skid-steering', nor do they state that this feature is not natively supported or offer the workaround of tuning parameters.\" As no relevant nodes were retrieved, the score is at its lowest."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the expected output is entirely unsupported by the provided context. Sentence 1, which discusses PX4 pivot turns and parameter tuning, cannot be attributed to any information within the node(s) in retrieval context, as they cover completely unrelated topics like motor control and different wheel types."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.4418604651162791,
+          "passed": false,
+          "reason": "The score is 0.44 because the response almost completely misses the point by repeatedly discussing aerial vehicles like quadcopters instead of the \"skid-steering rover\" specified in the input. While it mentions the core concepts of PX4 and pivot turns, its explanation is based on a fundamentally incorrect understanding of the vehicle type, rendering most of the information irrelevant and wrong."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_7",
+      "success": false,
+      "error": "504 Deadline Exceeded",
+      "metrics": []
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the retrieval context. Fantastic work, no contradictions were found!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 as the retrieved node is perfectly relevant to the user's query about DShot throttle limits. Excellent work!"
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output, sentence [1], is unsupported by the provided node(s) in retrieval context. The context does not mention the `THR_MAX` parameter, and while it references `PWM_MAIN_MAX` in node [1] and `DShot` in nodes [2, 4], it does not connect them to explain how to limit throttle output."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "This is a perfect score! The response directly and completely answered the user's question about setting a maximum throttle limit for DShot ESCs in PX4 without any irrelevant details."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.5,
+          "passed": true,
+          "reason": "The score is 0.50 because the output claims that firmware version 1.15.4 ensures proper communication for the Holybro H-RTK UM982 GPS, which is a direct contradiction of the context where a user reported that this specific update caused their GPS to stop being recognized."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the first and only node in the retrieval contexts is perfectly relevant to the user's query about RTK fix issues. An excellent result!"
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the expected output is entirely unsupported, as key instructions like checking the 'correction link (UART or USB)' and 'survey-in' settings are absent from the nodes in retrieval context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.8571428571428571,
+          "passed": true,
+          "reason": "The score is 0.86 because the output likely provided useful general troubleshooting steps for RTK issues, but it is not higher due to significant factual errors. Specifically, it referenced the wrong RTK module (UM982 instead of the F9P) and confused PX4 firmware with the RTK module's firmware, which could mislead the user."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context, with no contradictions found. Great job!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00, which is fantastic! All retrieved nodes are highly relevant to the user's query about integrating an ESP32 with PX4 for GPS-independent navigation, as the first node directly discusses 'ESP32 PX4 SITL Integration' and 'PX4 without GPS'."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output is unsupported. The provided node(s) in retrieval context do not contain any of the specific details regarding the use of MAVLink, serial/Wi-Fi communication, or the exchange of telemetry and position data."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Excellent! The response is perfectly relevant, directly addressing the user's specific technical query about integrating an ESP32 with PX4 for GPS-independent navigation."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context, with no contradictions found. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only node in the retrieval contexts is irrelevant. The first node fails to answer the user's question as it 'does not provide any information about why the avoidance algorithms are implemented as standalone modules', and the core reasons, such as 'modularity' and 'reduce computational load', are absent."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire statement in sentence [1], explaining that companion processes run separately to maintain modularity and reduce computational load, is not supported by any of the provided nodes in the retrieval context. Although node [1] and node [3] mention a 'Companion Computer', the specific reasoning for its use is absent."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Excellent! The response is perfectly relevant to the user's question about PX4 avoidance algorithms, earning it the highest possible score."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context, with no contradictions found. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only retrieved node is irrelevant. The first node in the retrieval contexts is unhelpful as it discusses different PX4 build errors, such as a 'non-existent target \"drivers__uavcan\"' and a 'missing member \\'MC_MAN_TILT_TAU\\'', but completely misses the core issue of building older tags which requires updating submodules and using a matching toolchain."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output, which suggests updating submodules and using a matching toolchain, is not supported by any of the 5 nodes in retrieval context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.8,
+          "passed": true,
+          "reason": "The score is 0.80 because the answer likely addresses the general CMake error but is not higher because it repeatedly offers advice specific to ROS 2, which was never mentioned in the input and is therefore based on a potentially irrelevant assumption."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is fully supported by the provided context and contains no contradictions. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00, which is perfect! All retrieved nodes were highly relevant to the user's issue, with the first node correctly identifying key themes like 'Undesirable yaw in quadcopter while taking off' and 'Yaw Shift on Takeoff'."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output is unsubstantiated by the provided information. While the node(s) in retrieval context mention related topics like yaw and propellers in nodes 1 and 2, they never explicitly state the solution of checking motor order and propeller orientation or the causal link between an incorrect setup and a yaw spin."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Fantastic work! The response earned a perfect score because it directly and completely answered the user's question about their drone without including any irrelevant information."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.9333333333333333,
+          "passed": true,
+          "reason": "The score is 0.93 because the output incorrectly states that a 'Slight Motor Tilt' was the solution for the 'sudden flip' issue, when the context specifies it was the solution for RPM imbalance and yaw drift."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the retrieval was flawless! The top-ranked node directly addresses the user's query about uneven motor output by discussing 'Inconsistent RPM between CW and CCW propellers'."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the expected output (Sentence 1) is entirely unsupported by the provided nodes in the retrieval context, as the suggestions to verify ESC calibration and PID tuning are not mentioned anywhere."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.9523809523809523,
+          "passed": true,
+          "reason": "The score is 0.95 because the response is highly relevant to the user's core problem of diverging motor RPMs. It does not receive a perfect score because it introduces an incorrect symptom—a 'sudden flip'—which was not part of the user's description."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.8,
+          "passed": true,
+          "reason": "The score is 0.80 because the output incorrectly generalizes that updating to PX4 1.14 is the solution, when the context specifies that for the backtransition overshoot issue, an update to a version newer than 1.14 is required."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only retrieved node is irrelevant to the user's query about the cause of a VTOL losing global position. The first node in the retrieval contexts discusses related symptoms like a \"'strange roll'\" and \"'drifts during Trasition'\", but it does not mention the critical potential causes such as \"electromagnetic interference, GNSS placement, or compass data disruption.\" Instead, it suggests unrelated solutions like to \"'Disable weather vane',\" failing to address the user's specific problem."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the single sentence in the expected output is entirely unsupported by the provided node(s) in retrieval context. The nodes do not contain any information regarding electromagnetic interference, GNSS placement, power lines, or the recommended actions of relocating the GPS and recalibrating sensors."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Perfect score! The response is highly relevant and directly addresses the user's technical question about the VTOL malfunction without any unnecessary information."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context, with no contradictions found. Fantastic work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the first and only node in the retrieval contexts is perfectly on-topic! It correctly identified the user's hardware, `[HardwareModule] FMU_V5`, the symptom of a `[ErrorCode] Long Beep Error Sound`, and the context of a `[Theme] Firmware Upgrade Failure`, leading to a flawless retrieval."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the expected output contains the instruction to 'perform a clean parameter reset,' which is completely absent from any of the provided nodes in retrieval context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.9090909090909091,
+          "passed": true,
+          "reason": "The score is high because the output provided a mostly relevant and helpful diagnosis for the user's specific PX4 board issue. It is not a perfect 1.0 because it included one illogical troubleshooting step, suggesting a software tool be used to inspect a hardware fault."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": true,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.7272727272727273,
+          "passed": true,
+          "reason": "The score is 0.73 because the output consistently misidentifies the warning as 'Accel 0 clipping', whereas the context explicitly and repeatedly states the error was 'Accel 2 clipping'."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00! The first node in the retrieval contexts was highly relevant, as it directly addressed the 'Accel 2 clipping' warning by identifying the cause as 'Vibration' and suggesting solutions like 'Improve FCU Mounting'."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00! Excellent. The expected output is fully supported by the information provided in node 5 in the retrieval context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "This is a perfect score! The response was entirely focused on the user's question about 'Accel 0 clipping' warnings, with no irrelevant information. Excellent job!"
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.8,
+          "passed": true,
+          "reason": "The score is 0.80 because the output incorrectly identifies the project as the 'NXP HoverGames' and misattributes the solutions for a tricopter's hovering instability to a hexacopter's uneven RPM problem."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00! All retrieved nodes are highly relevant to the user's query about uneven motor RPMs, resulting in an ideal ranking."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output is un-attributable to the provided nodes in retrieval context. The central recommendation to 'recalibrate ESCs' is not mentioned, even though related concepts like 'Inconsistent RPM' and 'Verify Motor Wiring' are present in nodes 1, 3, and 4."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.9230769230769231,
+          "passed": true,
+          "reason": "The score is 0.92 because the response is highly relevant and directly addresses the user's question. It is not a perfect 1.0 because it includes a minor, irrelevant mention of 'hexacopters or VTOLs,' when the user specifically asked about a 'quadcopter'."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context, with no contradictions found. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the first and only node in the retrieval contexts is irrelevant to the user's query. This node is unhelpful as it is just a 'collection of metadata from various forum threads' and 'offers no specific instructions or details on how to set up the connection'."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output, which provides specific instructions on installing the PX4–ROS2 bridge with micro XRCE-DDS, ensuring matching RTPS IDs, and configuring a serial link, is unsupported by the provided information. While node(s) in retrieval context, specifically node 4, touch upon the high-level theme, they lack any of these necessary technical details."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00 because the response is completely relevant, directly addressing the user's specific technical question about connecting and using the PX4-ROS2 bridge with a Qualcomm Flight RB5 drone. Fantastic job!"
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context, with no contradictions found. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the retrieved context is perfectly relevant to the user's query about 'no global position' drone errors, making for an ideal retrieval."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output (sentence 1) is unsupported by the provided nodes in retrieval context. Key concepts such as 'poor EKF initialization', the `EKF2_HGT_MODE` parameter, and the recommendation to 'ensure GPS visibility' are not mentioned anywhere in the context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.9411764705882353,
+          "passed": true,
+          "reason": "The score is 0.94 because the output accurately addresses the user's question about the causes of the error. It is not a perfect score because it includes a minorly irrelevant statement about a potential future consequence, which is not a cause of the current issue."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context, as no contradictions were found. Great job!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the first and only node in the retrieval contexts is irrelevant. It provides a list of general titles like \"'Can PX4 Handle Drones Affected by External Forces?' and 'PX4 for high speed applications'\" but does not contain any information that addresses the specific question of arming a quadcopter during free fall."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output, which discusses arming during free fall and modifying failsafe logic, is completely unsupported by the node(s) in retrieval context, as they cover unrelated topics."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Fantastic work! The response is perfectly on-topic and directly answers the user's specific technical question, earning it a full score."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is completely faithful to the retrieval context, as no contradictions were identified. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only retrieved node is irrelevant to the input. The first node in the retrieval contexts does not answer the question about the 'L1 Controller', as it \"never mentions or explains the 'L1 Controller'\" and instead discusses unrelated configuration topics."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the expected output (sentence 1) is entirely unsupported, as none of the nodes in retrieval context contain information about the L1 Controller, lateral guidance, or its related concepts."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.8333333333333334,
+          "passed": true,
+          "reason": "The score is 0.83 because the output mostly answers the user's specific question about the L1 controller for fixed-wing navigation. It is not a perfect score because it includes irrelevant details about different flight modes (hover/transition) and a related but separate topic (attitude control estimators), which were not asked about."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.9,
+          "passed": true,
+          "reason": "The score is 0.90 because the output claims the documentation provides correct, detailed steps, but this is contradicted by the context which specifies that a relevant thread focuses on a 'documentation error'."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the top-ranked node is highly relevant to the user's query about installing and running PX4 with Gazebo simulation. Excellent retrieval!"
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output is unsupported. While the 2nd and 5th node(s) in retrieval context mention building PX4 with a SITL target, the crucial instruction to 'ensure Gazebo plugins are sourced correctly' is absent from the provided context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.9285714285714286,
+          "passed": true,
+          "reason": "The score is 0.93 because the answer is almost entirely relevant and helpful, but it loses a few points for including a command that directly contradicts the user's goal of running PX4 *with* Gazebo."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.8333333333333334,
+          "passed": true,
+          "reason": "The score is 0.83 because the output incorrectly states that flashing the PX4 firmware was a solution for settings not saving, when the context clarifies it was the solution for a configuration failure due to missing 'Rover Modules'."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00, which is fantastic! All nodes in the retrieval contexts are directly relevant to configuring a new airframe on a Pixhawk, resulting in a perfect ranking."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the expected output (S1) is entirely unsupported. Although flashing PX4 and selecting an airframe are mentioned across nodes [1], [3], and [4] in the retrieval context, the crucial instruction to 'calibrate sensors, radio, and ESCs' is not found in any of the provided information."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Excellent! This response is perfectly on-topic and directly answers the user's question about configuring a Pixhawk4 airframe."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the retrieval context, with no contradictions found. Fantastic work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00. Excellent! The first node in the retrieval contexts was highly relevant to the user's query about ESCs failing to start, as it directly addresses 'ESC Calibration Failure' and the '[Theme] Powering Sequence'."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the expected output is considered entirely unsupported. The key information that 'some ESCs require rearming after battery reconnection' is completely absent from the provided nodes in retrieval context, including node 1, node 2, and node 3."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Excellent! The response is perfectly relevant to the user's troubleshooting query, with no irrelevant information included."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output perfectly aligns with the retrieval context and contains no contradictions. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only node in the retrieval contexts, at rank 1, is irrelevant. While it mentions related keywords like 'CMake' and 'CMakeLists.txt', it is unhelpful as it \"does not contain the specific information required to answer the question, such as mentioning an 'add_subdirectory' section or the 'apps' directory.\""
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the single sentence in the expected output is not supported by the retrieval context. While node(s) 1, 3, and 5 in the retrieval context mention 'CMakeLists.txt', they do not contain the specific instructions to use 'add_subdirectory' or mention the 'apps directory'."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Perfect score! The output is spot-on, directly answering the user's question about where to modify the PX4 CMake file without any irrelevant details."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is fully supported by the retrieval context and contains no contradictions. Fantastic work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only retrieved node is irrelevant. The first node in the retrieval contexts mentions related topics like 'Drone Crash in Disarm' and 'LAND mode' but is unhelpful as it does not contain the specific parameter 'COM_DISARM_LAND' needed to address the user's question."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the expected output sentence is entirely unsupported by the context. None of the node(s) in the retrieval context contain the specific information about the 'COM_DISARM_LAND' parameter, its threshold, or the risk of premature disarming."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.9523809523809523,
+          "passed": true,
+          "reason": "The score is 0.95 because the output is highly relevant and directly addresses the user's question about their drone disarming. It is not a perfect 1.0 because it contains a factual error, incorrectly explaining the mechanism that triggers the disarm."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.9,
+          "passed": true,
+          "reason": "The score is 0.90 because the output incorrectly states that the environment should use Ignition Gazebo (`gz`), when the context explicitly mentions that the project uses Gazebo Classic 11."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only retrieved node is irrelevant. The first node in the retrieval contexts discusses related topics such as 'FPV Camera simulation with Gazebo' and 'Downward Facing Camera', but it is unhelpful as it 'does not contain any information about the specific commands ('MAV_CMD_IMAGE_START_CAPTURE') or software ('QGroundControl') needed to trigger image capture'."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the expected output is entirely unsupported by any of the provided node(s) in retrieval context. Sentence 1 mentions the `MAV_CMD_IMAGE_START_CAPTURE` command and `QGroundControl` survey missions, but these specific details are absent from the context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Great job! The output is perfectly on-topic, directly answering the user's technical question about triggering a camera in Gazebo without any irrelevant information."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context, with no contradictions found. Fantastic job!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only node in the retrieval contexts, ranked first, is irrelevant. While it mentions 'Arming denied', the issue it addresses is due to 'manual control lost', which is different from the user's specific problem of 'velocity/position invalid'."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because sentence 1 is entirely unsupported, as key details like 'visual odometry', the '/mavros/vision_pose/pose' topic, and the 'EKF2_AID_MASK' parameter are absent from all node(s) in the retrieval context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.3072289156626506,
+          "passed": false,
+          "reason": "The score is 0.31 because the output fundamentally misunderstands the user's core problem of 'indoor navigation.' The vast majority of the response consists of irrelevant advice for outdoor, GPS-based systems (like RTK and satellite locks) and contains numerous hallucinations and internal AI chatter. It avoids a score of zero only because it vaguely recognizes the topic of a drone arming failure, but the provided solutions are entirely incorrect for the user's environment."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Excellent! The score is 1.00 because the output is perfectly faithful to the provided context, with no contradictions found."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00, an excellent result! All retrieved nodes are highly relevant, as there are no irrelevant nodes. The first node in the retrieval contexts is perfectly ranked because it directly addresses the user's query by discussing key components like 'Rovers', 'qgroundcontrol', and 'PX4 QGC mission'."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output is unsupported by the provided context. While individual concepts like 'Rover', 'QGC', and 'GPS' are mentioned in nodes [1], [2], [3], [4], and [5] in the retrieval context, the specific, combined instructions to 'configure differential drive outputs' and 'verify GPS fix' are not present."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.234375,
+          "passed": false,
+          "reason": "The score is 0.23 because the output completely fails to answer the user's specific, technical question about setting up a PX4 rover. Instead of providing instructions, it generates an extensive and varied list of irrelevant personas and meta-commentaries, making the response fundamentally off-topic and unhelpful."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is fully supported by the retrieval context, with no contradictions found. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only node retrieved is irrelevant. The first node in the retrieval contexts discusses unrelated PX4 build errors such as a \"'CMake Compatibility Issue' and 'get_target_property() called with non-existent target'\" and does not address the specific \"'ccatch permission denied'\" error, resulting in the lowest possible score as no relevant information was found."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the expected output is entirely unsupported by the context. The solutions proposed in sentence 1, such as running with proper permissions, removing stale files, or checking ccache, are not mentioned in any of the 5 nodes in the retrieval context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.9375,
+          "passed": true,
+          "reason": "The score is 0.94 because the output correctly addresses the user's core 'ccatch permission denied' error. It is not a perfect score because it includes some unhelpful speculation about unrelated build system issues that are not indicated by the specific permission problem."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context, with no contradictions found. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00, which is a perfect score! All retrieved nodes are highly relevant to the user's question about enabling actuator outputs in HIL. The first node in the retrieval contexts directly provides the solution by suggesting to '`[Solution] Set SYS_CTRL_ALLOC=1`'."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output is unattributed; it introduces the parameter `SYS_USE_IO`, which is not mentioned in any of the provided nodes in the retrieval context, making the statement impossible to verify."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "This is a perfect score! The response directly and completely answers the user's specific technical question without any irrelevant information."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": true,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is fully supported by the retrieval context and contains no contradictions. Fantastic!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00, a perfect result! The first and only node in the retrieval contexts is highly relevant, as it directly discusses issues with Cube Orange and PX4, specifically mentioning 'Incorrect Current Reading'."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00, fantastic work! The expected output is fully supported by the node(s) in the retrieval context, as nodes 1, 2, 3, and 4 provide all the necessary details about setting the power monitor in QGroundControl and verifying the current sensing pin."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.75,
+          "passed": true,
+          "reason": "The score is 0.75 because the output correctly addresses the general topic of power module configuration in PX4, but it is not higher due to several significant inaccuracies. It provided irrelevant advice for the wrong hardware (Pixhawk instead of Cube Orange) and focused on solving a voltage problem instead of the user's stated current reading issue, while also referencing incorrect parameters."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": true,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.8888888888888888,
+          "passed": true,
+          "reason": "The score is 0.89 because the output confuses the issues presented in the context, mixing up the Albatross drone's servo problem with the separate issue of hexacopters having actively spinning motors."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the first and only retrieved node is perfectly relevant to the user's query about hexacopter motors and servo outputs. Excellent work!"
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Excellent work! The score is 1.00 because the single sentence in the expected output is perfectly supported, skillfully synthesizing information from nodes 2, 3, and 4 in retrieval context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.8,
+          "passed": true,
+          "reason": "The score is 0.80 because the answer was mostly relevant to the user's problem of the motors not spinning. However, it lost points for including irrelevant advice about issues like propeller imbalance, which are only applicable once the motors are already working."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is fully supported by the provided context and contains no contradictions. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00! The first node in the retrieval contexts is highly relevant, as it directly addresses the user's query about using 'PX4' for a 'VTOL' and correctly identifies the need to 'Modify the PX4 firmware' for a custom build."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the expected output (sentence 1) is entirely unsupported by the provided node(s) in the retrieval context. While the context mentions modifying PX4 firmware in a general sense (e.g., node 4), it lacks the specific details about 'mixer and control surfaces' or a 'tailsitter configuration'."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.8611111111111112,
+          "passed": true,
+          "reason": "The score is 0.86 because the output did provide some relevant information regarding PX4 firmware for a VTOL. However, it was prevented from scoring higher because it included several irrelevant and unhelpful statements, such as mentioning the unrequested ArduPilot system, making incorrect assumptions about the user's specific vehicle type, and including nonsensical data."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_36",
+      "success": false,
+      "error": "504 The request timed out. Please try again.",
+      "metrics": []
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.9411764705882353,
+          "passed": true,
+          "reason": "The score is 0.94 because the output incorrectly states the uORB message ID range is 0 to 254, which is a minor contradiction to the context that implies a limit of 255 due to the use of a uint8_t parameter."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the top-ranked node in the retrieval contexts was perfectly relevant, as it discusses key uORB commands like `[ActionCommand] orb_publish` and `[ActionCommand] orb_advertise`."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the single sentence in the expected output is entirely unsupported by the provided context. While node(s) in retrieval context 2, 3, and 4 mention the `uORB` module, they do not state that it implements a 'publish-subscribe pattern' for 'inter-module communication' or is part of a 'middleware layer'."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.92,
+          "passed": true,
+          "reason": "The score is 0.92 because the output mostly provides a correct and detailed explanation of the uORB system as requested. It is not higher because it includes a factual error about a specific function and adds some unrequested historical context."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.6666666666666666,
+          "passed": true,
+          "reason": "The score is 0.67 because the output confuses the functions of HiPEU and LoPEU modes. It incorrectly claims that HiPEU mode provides increased transmit power, when the context specifies that HiPEU affects the Duty Cycle (slow telemetry) and LoPEU affects TX Power (low telemetry range)."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00! This is an excellent score as the first node in the retrieval contexts is highly relevant, directly addressing the user's problem regarding '[Theme] Slow and Laggy Telemetry' with the specific '[HardwareModule] RFD868x-EU Modem'."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entirety of the expected output (Sentence 1) is unsupported, as the specific recommendations regarding 'air data rate', 'network ID settings', and 'retransmissions' are absent from all the provided node(s) in retrieval context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the response directly and fully addresses the user's question about slow radio communication without any irrelevant information. Excellent work!"
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context, with no contradictions found. Fantastic work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only node in the retrieval contexts is irrelevant to the input. The first node discusses various drone-related technical problems such as 'Indoor flight automatic crash detection shut-off' and 'Drone Inspection of Trees', but provides no information on how to detect illegally built structures. Since no relevant nodes were retrieved, the score is at its lowest."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the sentence in the expected output, which suggests using automated mapping, orthophoto stitching, and AI-based change detection, is entirely unsupported by the provided information. The node(s) in retrieval context discuss unrelated topics such as indoor flight crash detection (node 1), tree inspection (node 3), and automated landing systems (node 4)."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.7777777777777778,
+          "passed": true,
+          "reason": "The score is 0.78 because the answer provided relevant methods for detecting illegal structures with drones, but it also included irrelevant information about general drone safety and legal requirements, which do not address the user's specific question about the most efficient detection techniques."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context. Excellent work, as no contradictions were found!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00, an excellent result. The retrieved node is highly relevant, as it directly addresses the problem of a 'Drone losing position / crashing in Offboard mode' and proposes a solution involving 'Continuous Setpoints for Offboard'."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output (sentence 1) is unsupported. The specific recommendation for a setpoint frequency of '≥2 Hz' is not mentioned in any of the node(s) in retrieval context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.875,
+          "passed": true,
+          "reason": "The score is 0.88 because the output provided a mostly relevant answer to the user's specific problem but lost points for suggesting a workaround (changing flight modes) instead of strictly diagnosing the issue within Offboard mode as requested."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful and fully supported by the provided context. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only retrieved node is irrelevant. The first node in the retrieval contexts is unhelpful because it 'does not explain why multiple firmware files are generated', failing to address the user's specific question about the differences between the generated firmware files."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the single sentence in the expected output cannot be attributed to the provided context. The node(s) in retrieval context lack any mention of specific hardware targets like 'FMUv2, v3, v5' or the concept that different builds correspond to specific board versions."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Excellent work! The output is perfectly relevant, directly answering the user's question about the different PX4 firmware files without including any off-topic information."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.9,
+          "passed": true,
+          "reason": "The score is 0.90 because the output incorrectly recommends a specific tuning mode, while the source context actually presents conflicting advice, suggesting both Position Mode and Altitude Mode as potential solutions without favoring one."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00 because the retrieved context is highly relevant to the user's query about unexpected PX4 autotuning behavior."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output, which advises checking motor balance, battery voltage, and tuning in stable conditions, cannot be attributed to any of the provided node(s) in the retrieval context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.8333333333333334,
+          "passed": true,
+          "reason": "The score is 0.83 because while the output likely contained useful information, it was penalized for including incorrect advice that was irrelevant to the user's hexacopter and for restating the problem without adding value."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.9375,
+          "passed": true,
+          "reason": "The score is 0.94 because while the output correctly captures the discussion on indoor and outdoor environments, it introduces the specific terms `env_indoors` and `env_outdoors`, which are not explicitly present in the provided context."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the ranking is perfect! The first and only node in the retrieval contexts is highly relevant, directly addressing the user's query about 'PX4 Precision Landing Mode' and the 'LANDING_TARGET MAVLink Message'."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the single sentence in the expected output is not supported by the retrieved context. While node 1 in the retrieval context mentions the general topic of precision landing, it completely lacks any information regarding the specific 'LNDMC_LAND_TILT' parameter or the instruction to 'check camera alignment'."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.9117647058823529,
+          "passed": true,
+          "reason": "The score is 0.91 because the output provides a very thorough and relevant list of troubleshooting steps directly related to the user's PX4 setup. It is not a perfect 1 because it includes a few minor statements about environmental factors and a meta-statement about the text itself, which are not direct technical troubleshooting actions for the initial setup problem."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.7142857142857143,
+          "passed": true,
+          "reason": "The score is 0.71 because the output incorrectly states that the Nanoradar NRA15 connects via UART. The retrieval context repeatedly and clearly indicates that the connection and driver development being discussed is for UAVCAN, not UART."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00! The first retrieved node is highly relevant as it \"mentions both the specific 'Nanoradar NRA15' hardware and the 'PX4' software from the input question\", and no irrelevant nodes were surfaced."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output, which provides specific instructions for configuring a rangefinder, is unsupported by the provided context. Although the node(s) in retrieval context mention related topics like PX4 and rangefinders in node 4, they completely lack the actionable steps about configuring serial ports or setting RNGFND parameters."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Excellent! The response is perfectly relevant, directly addressing the user's specific technical question without any unnecessary information."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context, with no contradictions found. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00, an excellent result! The first node in the retrieval contexts is highly relevant as it directly addresses the 'Pixhawk Cube Orange+' hardware and the problem of 'Motor Output Oscillation' mentioned in the input."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output is unsupported by the nodes in retrieval context. Specifically, key concepts like 'IMU temperature stabilization' and 'sensor bias' are not mentioned in any of the provided nodes."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "A perfect score! The response is entirely relevant to the user's specific technical question about quadrotor oscillations, with no unnecessary information. Great work!"
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly supported by the provided information and free of any contradictions. Keep up the fantastic work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only retrieved node is irrelevant to the input. The first node in the retrieval contexts discusses various MAVLink topics like 'How to set remote ID' and 'DroneCan RemoteID', but it completely fails to address the specific question about what `target_system` and `component` IDs to use when sending commands from a companion computer. Since no relevant nodes were retrieved at all, the score is the lowest possible."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output, which details specific settings for `target_system=1`, `target_component=1`, and a unique source ID, is completely absent from the node(s) in retrieval context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.8571428571428571,
+          "passed": true,
+          "reason": "The score is 0.86 because the output largely answers the user's question about setting MAVLink IDs. However, it is not a perfect score because it provides some confusing and factually incorrect advice about specific ID values, which could cause communication failures for the user."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": true,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.9444444444444444,
+          "passed": true,
+          "reason": "The score is 0.94 because the output incorrectly suggests enabling Gazebo debugging with `gz_verbose=1`, when the context specifies the correct value is `GZ_VERBOSE=4`."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00, which is a perfect score! This is because the only node in the retrieval contexts is highly relevant, directly addressing the user's query about the 'Typhoon H480' model in 'Gazebo Simulation'."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the expected output is fully supported by the provided context. All key components, including GStreamer, camera plugins, SITL, and Gazebo, are explicitly mentioned in the nodes in retrieval context, such as nodes 1, 2, 3, and 4."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00 because the response is completely on-topic and directly addresses the user's problem without any irrelevant information. Fantastic work!"
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the retrieval context, with no contradictions found. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00! All retrieved nodes are highly relevant, with the first node in the retrieval contexts correctly providing key concepts like 'Autonomous Flight' and software suggestions such as 'Movavi' to directly answer the user's query."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output (sentence 1) is unsupported. The node(s) in retrieval context 1 and 3 mention automating flight and video but completely lack the specific details about using camera triggers to capture images or post-processing them into a time-lapse sequence."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the response perfectly addresses the user's query without including any irrelevant information. Excellent work staying on topic!"
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.9166666666666666,
+          "passed": true,
+          "reason": "The score is 0.92 because the output is highly faithful but makes one small error by mentioning the `pxaverecorder` tool, which is not listed in the provided context."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00, an excellent result! The single retrieved node is highly relevant to the query about reviewing PX4 flight logs with RViz, as it correctly addresses the need to convert log files."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the expected output is entirely unsupported by the provided context. Although the node(s) in retrieval context mention ULog files (node 4) and RViz (node 2) separately, there is no information about converting ULog data to ROS bag format, visualizing flight paths, or using the `/vehicle_odometry` topic."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.8095238095238095,
+          "passed": true,
+          "reason": "The score is 0.81 because the output provides a relevant answer to the user's question, but it also includes unnecessary conversational filler, meta-statements about the AI, and repetitive summaries that do not contribute to the solution."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the actual output is fully supported by the retrieval context, as no contradictions were found. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only node in the retrieval contexts is irrelevant to the user's query about integrating LiDAR. The node at rank 1 discusses unrelated topics such as 'Gazebo simulation, feeding Lidar position for odometry, and general VTOL tuning' instead of providing the specific integration steps requested."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output (sentence 1) is unsupported by the provided information. The node(s) in retrieval context do not contain any of the procedural details about connecting a LiDAR via UART/CAN, enabling a driver, or syncing sensor data for mapping missions."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "This is a perfect score! The response directly and completely answers the user's specific technical question without any irrelevant details."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": true,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.0 because the output is perfectly faithful to the provided context, with no contradictions found. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the retrieved context is perfectly relevant, addressing the user's question about GPS issues and arming failures. An ideal ranking!"
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the expected output is an excellent synthesis, with all information being fully supported by concepts found across nodes 1, 2, and 4 in the retrieval context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Fantastic work! The output is perfectly relevant and directly answers the user's question without including any unnecessary information."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.9444444444444444,
+          "passed": true,
+          "reason": "The score is 0.94 because the output incorrectly claims a servo should be connected to an auxiliary port 'S905', when the context explicitly states it should be connected to the 'MAIN4 output'."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00! All retrieved nodes are highly relevant to the user's query. The first node in the retrieval contexts directly provides the key command '[ActionCommand] MAV_CMD_DO_SET_SERVO', which is central to controlling a servo during an autonomous mission."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the expected output contains information not found in the provided context. Specifically, the command `DO_MOUNT_CONTROL` mentioned in sentence 1 is not supported by any of the nodes in retrieval context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.9473684210526315,
+          "passed": true,
+          "reason": "The score is 0.95 because the answer is almost perfectly relevant to the user's request. It loses a small fraction of a point for briefly mentioning the control of primary flight surfaces, which is slightly different from the user's implied goal of controlling an auxiliary payload servo."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context, as no contradictions were found. Great job!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the first and only node in the retrieval contexts is irrelevant. It fails to address the specific question of using a 4-in-1 ESC board as a power management board, as it lacks critical information about \"'current sensing' and 'voltage regulation'\". The node only broadly mentions \"PX4 and ESCs\" in general threads like \"'Detecting unhealthy motor or ESC in flight' and 'Px4 integration'\", which does not answer the input."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output (sentence 1) is unsupported. Key details like 'current sensing', 'voltage regulation', and how to 'connect the power module pins' are not mentioned in any of the node(s) in retrieval context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.18518518518518517,
+          "passed": false,
+          "reason": "The score is 0.19 because the output completely misunderstands the user's query, repeatedly misidentifying the '4-in-1 ESC board' as an IMU, an insole, or an attitude sensor. This fundamental error results in a cascade of irrelevant advice about different hardware and communication protocols, failing to address the user's actual question about power management with PX4. The score is not zero, likely because a few keywords were mentioned, but in a completely incorrect context."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context. Fantastic work, no contradictions were found!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00, which is an excellent result! The ranking is perfect as the first node in the retrieval contexts is highly relevant, addressing a '[Theme] Firmware Flashing Failure' on a similar system, '[Environment] MacOS Monterey 12.7.4'."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Great work! The score is 1.00 as the entire response is fully supported by the provided context, effectively synthesizing the permission-related advice from node 3 in the retrieval context and the flashing command from node 5."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the output consists entirely of garbled text that appears to be fragments of a prompt, and it does not address the user's technical question about flashing firmware in any way."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is fully supported by the retrieval context and contains no contradictions. Fantastic job!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only retrieved node, ranked first, is irrelevant. While it discusses changing various parameters in PX4 such as 'Center of Gravity (CG)', it does not contain any information about the specific gravity constant or the essential `CONSTANTS_STD_GRAV` parameter."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the expected output (S1) is completely unsupported by the provided context. The specific instruction to modify the `CONSTANTS_STD_GRAV` parameter and rebuild PX4 is not mentioned in any of the nodes in the retrieval context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "A perfect score! The output directly and accurately answers the user's question about changing the default gravity value in PX4, with no irrelevant information. Great job!"
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": true,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context, with no contradictions found. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the retrieval was perfect! The first node in the retrieval contexts correctly identifies the user's need to 'Increase GPS Rate' for the '[HardwareModule] HolyBro H-RTK F9P GNSS', making it highly relevant."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00! The expected output is an excellent synthesis of information from node 2 and node 3 in the retrieval context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.8125,
+          "passed": true,
+          "reason": "The score is 0.81 because the output correctly addresses the general topic of configuring the GPS module, but it is not higher because it includes several irrelevant details. It incorrectly confuses the MAVLink telemetry rate with the module's actual sampling rate and adds troubleshooting steps for different, unrelated issues."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is entirely faithful to the provided context, with no contradictions identified. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00! The retrieved node is highly relevant as it correctly identifies that both the 'ROTATION' and 'CAL_MAG0_ROT' parameters are related to sensor orientation for a '3-axis Magnetometer', directly answering the user's query."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output, which advises to 'use only one consistently to avoid double rotation', is not supported by the node(s) in retrieval context. Although nodes 1, 2, and 5 mention sensor orientation, they do not contain this specific instruction."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly relevant, directly addressing the user's specific technical question without any extraneous details."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the retrieval context, as no contradictions were found. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00, which is a perfect result! The single retrieved node is highly relevant to the user's query about 'PX4 SITL' and 'ROS', leading to an ideal ranking."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output, a single sentence, cannot be attributed to the provided context. While the node(s) in the retrieval context mention 'PX4 SITL', 'ROS', and a build command in node 3, they do not describe the specific procedure of sourcing a setup script in a 'catkin workspace' or launching via 'ROS launch files'."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Fantastic work! The response is perfectly relevant, directly answering the user's specific technical question without any unnecessary information."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context, with no contradictions found. Excellent job!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00! The first node in the retrieval contexts is highly relevant as it mentions key technologies like 'PX4' and 'mavlink/mavros' and directly addresses the user's goal with titles such as 'How to move a drone to its right or left'."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output (Sentence 1) is unsupported. The node(s) in retrieval context do not contain the specific message type `geometry_msgs/Twist`, the topic `/mavros/setpoint_velocity/cmd_vel`, or the required publishing rate of `≥2 Hz`."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "A perfect score! The response is completely relevant and directly addresses the user's question about controlling a PX4 drone with MAVROS commands."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00 because the output is completely faithful to the provided context, with no contradictions identified. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the retrieval was excellent, with the only node in the retrieval contexts being perfectly relevant to the user's issue with PX4 HITL simulation."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output is unsubstantiated by the provided context. The key instructions in the first sentence about ensuring correct serial port mapping and disabling SITL sensors are not mentioned in any of the node(s) in retrieval context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Fantastic! This is a perfect score because the response directly and comprehensively answers the user's question about troubleshooting PX4 HITL simulation, with no irrelevant information included."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": true,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the retrieval context. Fantastic work, as no contradictions were identified!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the single retrieved node is perfectly relevant to the user's query about quadrotor performance issues in Hold mode. Fantastic work!"
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00! Excellent work. The expected output is fully supported by the provided node(s) in retrieval context, with node 1 covering the PID tuning and node 2 covering the sensor verification."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Fantastic! The output is perfectly on-topic, directly addressing the user's question about quadrotor troubleshooting without any irrelevant information."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.8888888888888888,
+          "passed": true,
+          "reason": "The score is 0.89 because the output provides incorrect commands to run tests, such as `make check` and `make px4_sitl_test`, when the context only mentions the command `make tests`."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the single retrieved node is irrelevant to the user's query. The first node in the retrieval contexts 'does not contain the specific information required' and 'never mentions the `ut_run_test` framework or the `SITLTestRunner`,' making it unhelpful for writing independent unit tests for PX4 SITL modules."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the single sentence in the expected output is entirely unsupported by the provided context. Specifically, none of the nodes in retrieval context mention the `ut_run_test` framework, resetting module state, or `SITLTestRunner`."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.9565217391304348,
+          "passed": true,
+          "reason": "The score is 0.96 because the response is almost entirely relevant to the user's technical question. It is not a perfect 1.0 because it includes a brief, self-referential observation about the user's question, which is not part of the direct answer."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context, as no contradictions were found. Fantastic work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00! The ranking is excellent as the first node in the retrieval contexts is highly relevant, as it \"explicitly mentions both Crossfire and ExpressLRS receivers in relation to PX4\", directly addressing the user's query."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the expected output (Sentence 1) is entirely unsupported by the provided context. The node(s) in retrieval context do not mention the use of a 'CRSF serial port', 'inversion parameters', or the 'QGroundControl' software, which are all critical components of the answer."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.7142857142857143,
+          "passed": true,
+          "reason": "The score is 0.71 because while the output correctly addresses the user's question about Crossfire and ExpressLRS, it loses points for including irrelevant information about Futaba and SBUS receivers, which were not mentioned in the input."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.9333333333333333,
+          "passed": true,
+          "reason": "The score is 0.93 because the output makes a minor error by incorrectly stating that a Pixhawk 5X is simulated, whereas the context specifies that the Pixhawk 6X hardware module is used in the Multi-HITL setup."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00! The first retrieved node is highly relevant as it discusses a 'Multi-HITL Setup' for a 'Plane' in 'SITL Gazebo' with similar 'Pixhawk 6X' hardware, leading to a perfect ranking."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output (Sentence 1) is unsupported by the provided context. Although the nodes in retrieval context mention related terms like 'HITL' (node 4), 'Gazebo' (nodes 3 and 5), and 'Plane' (node 3), they do not contain the specific instructions to connect Gazebo via MAVLink serial or to disable internal sensors."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.6666666666666666,
+          "passed": true,
+          "reason": "The score is 0.67 because while it correctly identifies the general context of a drone simulation with Gazebo, it provides instructions for a completely different and irrelevant type of simulation. The output describes a Software-in-the-Loop (SITL) setup, which directly contradicts the user's specific request for a Hardware-in-the-Loop (HITL) simulation that requires physical hardware."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context. Great job, no contradictions were found!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the top-ranked node is perfectly relevant, as it directly discusses setting up a 'Dual RTK Setup (Base/Rover)' for 'Moving Baseline GPS Heading', which is exactly what the user asked about."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output is unsupported by the provided context. Specifically, the key instruction in the sentence to enable the heading output 'UBX-NAV-RELPOSNED' is not mentioned in any of the nodes in the retrieval context, making the entire statement unattributable."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.5,
+          "passed": true,
+          "reason": "The score is 0.50 because the response fundamentally misunderstands the user's request for a 'moving base' RTK heading configuration. It repeatedly provides irrelevant instructions for a standard ground-based RTK setup and includes incorrect or non-existent parameters, making the advice highly misleading for the user's specific goal."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": true,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context, as no contradictions were identified. Excellent job!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00, which is excellent! The first node in the retrieval contexts is perfectly relevant, as it directly provides the solution to '[Solution] Set SYS_CTRL_ALLOC=1'."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00! The entire expected output is directly supported by the information provided in node(s) 2 in the retrieval context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "This is a perfect score! The output directly and completely answers the user's specific technical question without any irrelevant information."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is fully supported by the provided context and contains no contradictions. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00! The single node in the retrieval contexts was highly relevant to connecting an FrSky receiver and a Pixhawk 4 flight controller."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the expected output, which provides instructions on setting `RC_PROTO=CRSF/SBUS` and configuring serial port inversion, is entirely unsupported by the provided nodes in retrieval context. Although node 2 mentions S.Port and F.Port, it lacks the specific configuration details required to form the answer."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Fantastic work! The output is perfectly on-topic and directly answers the user's specific question, earning it the highest possible score."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is completely faithful to the retrieval context. Well done, as no contradictions were detected!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only retrieved node is irrelevant. The first node in the retrieval contexts discusses \"several PX4 topics like the boot process, development environment, and source code tutorials, but it never mentions 'uORB', the 'uORB Explained Part 2' blog post,\" which is the core subject of the input."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output (Sentence 1), which discusses uORB topic registration and its internal mechanisms, is completely unsupported by the provided node(s) in retrieval context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.8888888888888888,
+          "passed": true,
+          "reason": "The score is 0.89 because the output accurately answers what topics are discussed in the specific blog post, but it loses some points for relevancy by including a statement about other sources of information, which was not requested."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context, with no contradictions found. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only node in the retrieval contexts, ranked 1st, is irrelevant. This node is unhelpful as it discusses PX4 compatibility with hardware other than the Pixhawk 2.4.8 and only mentions \"'[HardwareModule] Pixhawk'\" in a \"very general context of 'high speed applications'\", failing to provide any specific support details. Since no relevant nodes were retrieved, the score is zero."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entirety of Sentence 1 is unsupported, as crucial details like 'FMUv2 target', 'v2 firmware', and 'reduced memory' are not mentioned in any of the provided node(s) in retrieval context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.8571428571428571,
+          "passed": true,
+          "reason": "The score is 0.86 because the output is mostly relevant to the user's question about Pixhawk support. However, it is not a perfect score because it includes a confusing statement that conflates the hardware (Pixhawk) with the software (PX4) and does not specifically address the 2.4.8 model as requested."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": true,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the source material. Excellent work, as there were no contradictions found!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00, which is excellent! The top-ranked node is highly relevant to the query about unstable motor output, correctly identifying potential solutions such as the '[Solution] Incorrect Motor Order' from a thread about a 'Hexarotor flips over...' and suggesting to '[ActionCommand] Recalibrate Sensors and ESCs' from a thread about a 'Hexacopter tilting'."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00, which is fantastic! The entire expected output is perfectly supported by the documents, with the suggestions to \"recalibrate ESCs\" and \"Verify motor numbering\" being directly attributable to information within nodes 3 and 5 in the retrieval context, respectively."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Fantastic! The output is perfectly on-topic, directly addressing the user's specific technical problem without any irrelevant information."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is fully supported by the retrieval context, with no contradictions identified. Fantastic job!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the first and only node in the retrieval contexts is irrelevant to the user's question. This node discusses \"various general build issues for PX4 SITL, such as 'Submodule Clone Failed', 'Compilation Error', and 'Unspecified Build Error',\" but \"does not provide any information about building a 32-bit configuration\"."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output is unsupported by the node(s) in retrieval context, as they do not mention the specific CMake flag `-DCMAKE_TOOLCHAIN_FILE=posix_sitl_32bit.cmake` or the alternative of compiling with 32-bit flags."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.9473684210526315,
+          "passed": true,
+          "reason": "The score is 0.95 because the output provided a highly relevant and accurate answer to the specific technical question. It only lost a minor point for including a general troubleshooting tip about network issues, which was not directly related to the user's goal of building for a 32-bit architecture."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context. Excellent work, no contradictions were found!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only node in the retrieval contexts, ranked first, is irrelevant. While it mentions related themes like \"[Theme] Getting Started with PX4 Development\" and \"the need for getting-started guidance\", it contains no information about a \"PX4 Community Survey\" or its purpose."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the expected output is perfectly supported by the node(s) in retrieval context. The concepts of improving documentation, onboarding, and community support are all found within the context, specifically in node 1 and node 4. Fantastic work!"
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "A perfect score! The response directly and completely answers the user's question about the survey's purpose without including any irrelevant information."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context, with no contradictions found. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only node in the retrieval contexts is irrelevant. The first node discusses a troubleshooting issue regarding \"`Low motor RPM at full throttle`\" and does not provide the requested guidance on what specifications to look for when selecting an ESC."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output (sentence 1) is unsupported. While the node(s) in retrieval context (e.g., node 1, node 2) mention ESCs, they completely lack the specific recommendation about matching current and voltage ratings or supporting PWM/DShot protocols."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Excellent! The output is perfectly on-topic and directly addresses the user's specific question with no irrelevant information."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context, with no contradictions found. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.0! All retrieved nodes are highly relevant, with the first node correctly identifying themes like '[Theme] Magnetic Interference on Compass' which directly addresses the user's query."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output (sentence 1) is unsupported. Although node(s) in retrieval context 1, 3, and 5 mention related concepts like 'compass calibration' and 'magnetic interference', the crucial instruction to 'verify orientation parameters (MAGx_ROT)' is completely absent."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Excellent! The answer is perfectly on-topic and directly addresses the user's question about PX4 compass warnings without any irrelevant information."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the retrieval context, with no contradictions found. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00, an excellent result! This is because the first node is highly relevant, directly addressing the user's query on hexacopters and motor failure by mentioning topics like '[Theme] ESC/Motor Failure' and '[HardwareModule] Hexacopter'."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output is unsupported. Sentence [1] makes a specific claim about the 'X configuration' offering better yaw control and stability, but this information is not mentioned in any of the provided node(s) in retrieval context, including the tangentially related node(s) [3] and [4]."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.9,
+          "passed": true,
+          "reason": "The score is 0.9 because the output effectively answers the core question about stability and motor failure handling. It is not a perfect score because it includes extra, unrequested information about other performance metrics like speed and agility."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": true,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.8888888888888888,
+          "passed": true,
+          "reason": "The score is 0.89 because the output misrepresents the role of PX4 v1.15.1. The context clearly states this version had the unstable airspeed sensor bug, and the solution was to update from it, but the output presented this information incorrectly."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the retrieved context is perfectly relevant to troubleshooting ADC readings in PX4, with no irrelevant nodes present. Excellent work!"
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the expected output is fantastically synthesized from the information available in the nodes in the retrieval context, specifically nodes 1 and 5."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.8235294117647058,
+          "passed": true,
+          "reason": "The score is 0.82 because the output provides relevant information for troubleshooting ADC issues, but it is not higher because it incorrectly includes several irrelevant details and solutions pertaining to the I2C communication bus, which is unrelated to the user's specific problem with analog-to-digital converters."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context. Excellent work, no contradictions were found!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only retrieved node is irrelevant to the user's query. The first node in the retrieval contexts provides very high-level summaries, such as suggesting to 'Read PX4 VTOL Documentation', instead of the specific, actionable advice the user was looking for, like verifying parameters such as 'VT_TRANS_THR' and 'FW_PSP_OFF' or testing in 'calm wind' at 'ample altitude'."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output, sentence 1, is unsupported by the provided context. Specifically, the recommendations to verify parameters like VT_TRANS_THR and FW_PSP_OFF, ensure ample altitude, and test in calm wind are not mentioned in any of the node(s) in retrieval context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.9393939393939394,
+          "passed": true,
+          "reason": "The score is 0.94 because the output is highly relevant and directly addresses the user's question about their first PX4 VTOL flight. It is not a perfect score because it includes a minor factual inaccuracy about RC binding and a redundant, unhelpful statement."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.8888888888888888,
+          "passed": true,
+          "reason": "The score is 0.89 because the output incorrectly identifies the command as `MAV_CMD_DO_SET_ACTUATOR` instead of the correct `MAV_CMD_DO_SET_SERVO`. It also wrongly claims QGroundControl is used via its 'actuator controls', a detail not mentioned in the context."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only node retrieved is irrelevant to the user's specific question. The user asks about 'UAVCAN' servo actuators, but the first node in the retrieval contexts focuses on PWM control, referencing methods like 'Connect servo to PWM' and 'MAV_CMD_DO_SET_SERVO', and is missing the essential keyword 'UAVCAN'."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output (sentence 1) is unsupported by the provided context. The response requires information on enabling a \"UAVCAN v1 driver\" and assigning \"servo node IDs,\" but the node(s) in retrieval context, such as nodes 1 and 4, do not contain this information and instead discuss other methods like PWM or ROS2."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.8461538461538461,
+          "passed": true,
+          "reason": "The score is 0.85 because the output correctly addresses the core question about PX4's support for UAVCAN servos. It does not get a perfect score because it includes irrelevant information about PWM tuning and a general warning, which are not directly related to the specific protocol mentioned in the input."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.8181818181818182,
+          "passed": true,
+          "reason": "The score is 0.82 because the output confuses details from two separate issues mentioned in the context. It incorrectly associates the 'Noise on VICON data' problem with AUTO.MISSION mode instead of Offboard Mode, and wrongly connects it to MAVROS when the context links that issue to ROS2."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00! This is because the first node in the retrieval contexts is highly relevant, directly addressing the user's issue by discussing 'Noise on VICON data' and problems where the 'FW drifts after launch'."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the expected output is entirely unattributable to the provided context. Although node(s) 4 and 5 in retrieval context mention related terms, they do not contain the specific instruction to align Vicon data with the PX4 coordinate frame and timestamps, nor do they state that offset or latency causes the drift."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.9714285714285714,
+          "passed": true,
+          "reason": "The score is 0.97 because the output is highly relevant to the user's problem. It only loses a minor point for making an unsupported assumption that the drone is a fixed-wing vehicle, which was not mentioned in the input."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context, with no contradictions found. Great job!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the retrieval was excellent, with no irrelevant nodes present. The single node in the retrieval contexts was perfectly relevant as it discusses issues like 'Uncontrolled Climb' and 'Sudden High Thrust'."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the single sentence in the expected output is entirely unattributable to the node(s) in retrieval context, as the context does not mention the `RTL_ALT` or `LAND_SPEED` parameters, nor the need to verify 'position validity'."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.9310344827586207,
+          "passed": true,
+          "reason": "The score is 0.93 as the output provides a largely accurate and relevant explanation for the drone's unexpected climbing. It is not perfect because it includes several specific PX4 parameter names that are incorrect or non-existent, which makes portions of the advice factually inaccurate."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is fully supported by the provided context, with no contradictions found. Great job!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only node in the retrieval contexts, ranked first, is irrelevant. It discusses gimbal control using 'pymavlink' and a 'Gamepad Joystick' but does not contain the specific instructions about using PWM through Mount settings, which is the core of the user's question."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output is unsupported by the provided context. While nodes 1, 2, and 4 in retrieval context mention the general topic of gimbal control, they lack the specific configuration details required, such as setting 'MNT_MODE_IN=PWM' or mapping a 'gimbal pitch servo' to an 'auxiliary output channel'."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Excellent work! The response is perfectly relevant and directly addresses the user's technical question without any unnecessary information."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is fully supported by the provided context and contains no contradictions."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the first and only node in the retrieval contexts is irrelevant. It completely fails to answer the user's question, as it \"does not provide any specific information on how to configure the drone's fundamental physical parameters like 'mass', 'inertia', or 'arm length'.\" Since no relevant nodes were retrieved, the score is zero."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output (sentence 1) cannot be attributed to the provided context. The key concepts of adjusting airframe geometry with URDF and ensuring correct mass/inertia values are completely absent from the nodes in retrieval context, even though node 4 has a tangentially related title."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Fantastic work! The score is a perfect 1.00 because the output is completely focused on the user's specific technical question about PX4 parameters, with no irrelevant information."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context, with no contradictions identified."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because all retrieved nodes are relevant to the user's query. The first node in the retrieval contexts correctly discusses '[Theme] GPS Signal Loss' and '[Theme] Land Mode', leading to a perfect ranking!"
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output (Sentence 1) is unsupported by the node(s) in retrieval context, which lack any mention of the flight modes LOITER and ALTCTL or the parameters COM_POSCTL_NAVL and NAV_DLL_ACT."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.9130434782608695,
+          "passed": true,
+          "reason": "The score is 0.91 because the output is highly relevant and correctly explains the overall failsafe behavior for PX4. It does not receive a perfect score because it includes a couple of technical inaccuracies regarding the specific landing procedure for fixed-wing aircraft and the precise trigger for the failsafe."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context, with no contradictions found. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00! The retrieved context is highly relevant, as the first node directly addresses the user's question by connecting '[SoftwareModule] PX4', '[HardwareModule] ESC', and communication protocols like '[Theme] PWM'."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the expected output is entirely unsupported. Sentence 1 discusses specific protocols ('OneShot', 'DShot') and 'SERVOx_FUNCTION' values, none of which are mentioned in the provided node(s) in retrieval context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.5,
+          "passed": true,
+          "reason": "The score is 0.50 because the output almost completely misunderstands the user's request, providing troubleshooting steps for the radio control system (receiver/transmitter) instead of addressing the specific question about the ESC protocol. While related to the same drone, it fails to answer the core problem."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly supported by the retrieval context, with no contradictions found. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the first and only node in the retrieval contexts is irrelevant. The user is asking why their quad's motors spin to their maximum value, but the node discusses the opposite problem where motors are 'not spinning' or 'dont spin', as indicated by titles like 'Quadcopter motors not spinning'."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the expected output (Sentence 1) is entirely unsupported. The node(s) in retrieval context do not mention key concepts like `SERVOx_MIN/MAX`, `mixer scaling`, or the specific problem of incorrect PWM limits causing a `full-throttle output`."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "A perfect score! The output is entirely focused on answering the user's specific technical question without any irrelevant information."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the actual output is perfectly faithful to the retrieval context, with no contradictions found. Fantastic work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00, a perfect score! The first and only retrieved node is highly relevant to the input, as it directly addresses the '[Theme] PX4-ROS2 Integration' and '[Parameter] Offboard Mode'."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output, which provides specific recommendations to 'ensure reliable network transport' and 'publish setpoints at ≥2 Hz', cannot be attributed to any information within the provided node(s) in retrieval context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.8571428571428571,
+          "passed": true,
+          "reason": "The score is 0.86 because the output correctly answers the main question about using the RTPS bridge for offboard control. It is not a perfect score because it includes a tangential detail about the OpenRTK ecosystem and, more importantly, provides a potentially misleading example from MAVROS, which is a different bridge than the one the user asked about."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.0 because the output is perfectly faithful to the provided context, with no contradictions found. Great job!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00! The first node in the retrieval contexts is highly relevant as it directly addresses programming from scratch by mentioning threads like 'Scratch FC build with PX4' and how to 'Use my own control algorithm'."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output (sentence 1) is unsupported. Although node(s) 1, 2, 3, 4, and 5 in retrieval context mention PX4 development and C++, the key information about integrating modules 'via uORB messages' is absent."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Excellent job! The response directly and completely answers the user's question without any irrelevant details."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.8,
+          "passed": true,
+          "reason": "The score is 0.80 because the output incorrectly identifies the Cube Orange as a companion computer, while the provided context explicitly states it is a flight controller."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.0, a perfect score! The most relevant node in the retrieval contexts was correctly ranked first, providing the direct answer by listing the `camera_trigger test` command right away."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the expected output cannot be supported by the provided context. While sentence 1 mentions the `camera_trigger test` command, which is found in node 1 in the retrieval context, it also introduces the `MAV_CMD_IMAGE_START_CAPTURE` command, which is not mentioned anywhere in the context, making the entire statement unverifiable."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Fantastic work! The output is perfectly on-topic, directly addressing how to test the camera trigger function in PX4 without any irrelevant information, fully earning its perfect score."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.8888888888888888,
+          "passed": true,
+          "reason": "The score is 0.89 because the output incorrectly states that the drone's failure mode is to revert to Position Hold, when the context specifies it returns to its takeoff position."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only node retrieved in the retrieval contexts is irrelevant. The first node discusses general landing issues like \"'unwanted X,Y directions'\" and the drone \"'Returns to takeoff position instead of landing'\", but it does not contain the specific information required to answer why the drone switches to Position mode, such as the \"'mission end condition'\" or the parameter \"'NAV_DLL_ACT'\"."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because sentence 1 is entirely unsupported by the node(s) in retrieval context, which do not mention `mission end condition`, `NAV_DLL_ACT`, or PX4 exiting a mission due to an improperly defined landing sequence."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00 because the response was completely on-topic, directly addressing the user's question without any irrelevant information. Excellent work!"
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context, with no contradictions found. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only retrieved node is irrelevant. The first node in the retrieval contexts, while discussing GPS issues, is unhelpful as it \"does not mention the specific error 'not enough GPS satellites'\" and lacks any of the required solutions."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the expected output is entirely unsupported. While node(s) in retrieval context 1 and 4 mention related terms like 'fake_gps' and 'SITL', they lack the specific instructions to increase the satellite count or disable parameters like 'EKF2_GPS_CHECK' and other GPS checks."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.8888888888888888,
+          "passed": true,
+          "reason": "The score is 0.89 because the output correctly addressed the user's software-based simulation issue but lost points for including irrelevant advice related to real-world hardware, which is not used in a Software-in-the-Loop (SITL) setup with 'fake_gps'."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.9,
+          "passed": true,
+          "reason": "The score is 0.90 because the output incorrectly claims the 'fields_updated' bitmask is related to a SITL/Gazebo simulation, when the context specifies it is for an X-Plane to PX4 Hardware-in-the-Loop setup."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00! The ranking is excellent as the first node in the retrieval contexts is highly relevant. It correctly points out that the input's 'Accel Range' error directly relates to '[ErrorCode] Number of simulated accelerometer out of range', ensuring the most useful information was ranked first."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output is unsupported by the provided context. While node(s) 2 and 3 in the retrieval context describe problems like 'Arming denied' and 'accelerometer out of range', they do not contain the solutions suggested in sentence 1 to ensure the vehicle is stationary or to recalibrate the accelerometer."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00! The answer is completely focused on the user's specific technical question without any irrelevant information."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the actual output is perfectly supported by the retrieval context, with no contradictions found. Fantastic work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00! The retrieved context is highly relevant, directly addressing the user's `ImportError` by suggesting a solution to install the necessary Python dependencies."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output sentence is unsupported by the provided context. Although node[3] in the retrieval context contains a similar `pip install` command, it lacks the specific file path `Tools/setup/requirements.txt`, and no node mentions setting the `PYTHONPATH`."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Excellent! The answer was perfectly relevant and directly addressed the user's question about the ImportError without any unnecessary information."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the retrieval context, with no contradictions found. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only node in the retrieval contexts, at rank 1, is irrelevant. This node \"mentions related concepts like 'External Telemetry Module', 'QGroundControl (QGC)', and 'Telemetry Transmission', but it never addresses the specific question of whether a single telemetry module can connect to multiple Ground Control Stations.\" Since no relevant nodes were retrieved, the score is at its lowest."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the expected output is entirely unsupported by the provided context. Specifically, no node(s) in retrieval context mention the core concepts from sentence 1, such as the one-to-one limitation of a telemetry link to a MAVLink stream or the suggested solutions involving a network bridge or MAVLink router."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00! The response is spot-on, directly addressing the user's question with no irrelevant information. Excellent work!"
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context, with no contradictions found. Fantastic work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only node in the retrieval contexts, ranked first, was irrelevant to the user's question. While it discusses topics like PX4, Gazebo, and SITL, it focuses on 'build failures and compatibility problems' and 'does not contain any information about the location of log files.'"
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the expected output (sentence [1]), which specifies log file locations, is completely unsupported by the retrieved nodes in retrieval context. The nodes (1st through 5th) discuss unrelated topics such as build commands and software modules, without mentioning logs at all."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.9,
+          "passed": true,
+          "reason": "The score is 0.90 because the output correctly answers the user's direct question about the location of the log files. It is not a perfect 1.0 because it includes a minor, unrequested detail about the content of the files, which is not what the user asked for."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is fully supported by the retrieval context and contains no contradictions. Great job!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only node in the retrieval contexts, ranked first, is irrelevant. This node is unhelpful because it 'never mentions the specific 'NMEA0183' protocol,' which is the central part of the user's question, resulting in no relevant information being retrieved."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the single sentence in the expected output is entirely unsubstantiated by the provided context. Key details such as the 'NMEA driver', the '5–10 Hz' frequency, and the 'serial or UDP connection' are not mentioned in any of the node(s) in retrieval context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.8181818181818182,
+          "passed": true,
+          "reason": "The score is 0.82 because the response is largely relevant to the user's query about PX4 and the NMEA0183 protocol. It is not a perfect score because it includes irrelevant details about physical hardware modules and PPS signals, when the input's focus is on software-based 'fake data injection'."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": true,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.8888888888888888,
+          "passed": true,
+          "reason": "The score is 0.89 because the output incorrectly attributes a 'Preflight Error' to an ESC entering calibration mode, whereas the provided context links this error to the motor throttle dropping to zero in OffboardControlMode."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00, which is excellent! The retrieved node directly addresses the user's query about potential motor and ESC-related issues on the Cube Orange hardware, resulting in a perfect ranking."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00! The entire response is comprehensively supported by the provided nodes in retrieval context. Sentence 1's suggestions to check wiring and inspect logs are directly attributable to information found in nodes 1 and 3."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.9333333333333333,
+          "passed": true,
+          "reason": "The score is 0.93 because the output provided a highly relevant answer to the user's problem. It is not a perfect score because it included the technically inaccurate and confusing suggestion that an ESC calibration could fail mid-flight, which is a pre-flight procedure."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00 because the output is fully supported by the retrieval context. A detailed review found no contradictions, indicating excellent faithfulness. Keep up the great work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only node in the retrieval contexts, ranked first, was irrelevant. It discusses general VTOL transitions but fails to mention the specific parameter 'mc_weight' or its role in shifting control authority, which was the central part of the input."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the expected output is entirely unsupported by the provided context. While several nodes in retrieval context (e.g., nodes 2, 4, and 5) mention related topics like PX4 and vehicle transitions, the core information in the sentence about the 'mc_weight' parameter and the gradual shifting of control authority is completely absent."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.625,
+          "passed": true,
+          "reason": "The score is 0.62 because while it likely provides some relevant context, it contains significant inaccuracies and irrelevant information. Critically, it confuses the requested backward transition with the forward transition and includes off-topic details about tuning and troubleshooting instead of directly answering the user's question."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is fully supported by the provided context, as no contradictions were identified. Fantastic work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the single retrieved node at rank 1 is irrelevant to the user's question. The node is unhelpful as it \"does not mention the `MAV_CMD_MISSION_START` command at all\" and instead discusses unrelated topics like \"gimbal control, auto-starting work queue tasks, and multi-vehicle SITL configuration\"."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output (sentence 1) is unsupported, as the node(s) in retrieval context provide no information about the `MAV_CMD_MISSION_START` command or its prerequisites."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Excellent work! The score is a perfect 1.00 as the output directly and thoroughly answers the user's specific technical question without including any irrelevant details."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context, with no contradictions found. Fantastic work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only node in the retrieval contexts, ranked first, is irrelevant. While it mentions keywords like 'Cube Orange' and 'UI LED', it \"does not contain the specific MAVLink messages required\" and instead discusses the 'ADSB_VEHICLE' message which is \"for a completely different purpose\"."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output (sentence 1) is unsupported by the provided node(s) in retrieval context. The context does not contain any information about querying `SYS_STATUS` or `AUTOPILOT_STATE_FOR_GIMBAL` messages for updates."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.6666666666666666,
+          "passed": true,
+          "reason": "The score is 0.67 because the output provided some related information about LED configuration but failed to answer the user's specific question about how to *read* the live LED status. Instead, it gave instructions on how to *configure* the LED and included irrelevant troubleshooting steps."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.8571428571428571,
+          "passed": true,
+          "reason": "The score is 0.86 because the output incorrectly claims the 'px4::critical' class was the solution to a privilege violation issue, whereas the context explicitly states this proposal was rejected."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00! The first node in the retrieval contexts is highly relevant as it directly addresses the 'compilation error on Raspi' and the specific error '[ErrorCode] atomic is not lock-free', perfectly matching the user's query."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output, which suggests solutions like updating GCC or disabling lock-free atomics, cannot be attributed to the node(s) in retrieval context. The first node only mentions the compilation error without providing these specific fixes."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.0 as the output is perfectly relevant to the user's question, containing no unnecessary information. Excellent work!"
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context. Fantastic work, no contradictions were found!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the first and only node in the retrieval contexts is irrelevant. This node discusses general PX4 topics but \"completely fails to mention 'uORB' or the specific 'uORB Explained Part 1' blog series asked about in the input\", providing no useful information for the user's question."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entirety of the expected output, which comprises a single sentence, is unsupported. The node(s) in retrieval context lack any mention of the key concepts discussed, such as 'uORB message passing', 'topic creation', or 'inter-module communication'."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.8571428571428571,
+          "passed": true,
+          "reason": "The score is 0.86 because the output largely answers the user's question about the topics covered. It is not a perfect score because it also includes a more general statement about the post's theme, which is related but not a direct answer to the specific topics requested."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is fully faithful to the provided information, with no contradictions detected. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the first node in the retrieval contexts is irrelevant. While it discusses general \"VTOL issues, including pitch failure and hover problems\", it does not mention the specific parameters \"'VT_PSHER_SLEW' or 'VT_FW_PSP_OFF'\" that are central to the expected answer, making it unhelpful."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the expected output, which details adjusting `VT_PSHER_SLEW` and `VT_FW_PSP_OFF` parameters, is entirely unsupported by the information within the provided node(s) in retrieval context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.8125,
+          "passed": true,
+          "reason": "The score is 0.81 because while the output likely addressed the user's core question about VTOL configuration, it included several irrelevant and incorrect statements. It lost points for assuming the user's hardware, suggesting a non-existent parameter, and providing unrelated troubleshooting advice for a problem the user did not have."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context, with no contradictions found. Great job!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the first and only node in the retrieval contexts is irrelevant. Although it discusses related topics like how to 'Modify the PX4 firmware', it completely fails to provide the specific download location for firmware v1.10.2, which is the sole focus of the input."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output (Sentence 1) is unsupported by the node(s) in retrieval context, which do not contain any information about downloading from a GitHub repository or building the v1.10.2 branch."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "This is a perfect score! The output is entirely relevant and directly addresses the user's question with no unnecessary information."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is perfectly faithful to the provided context. Excellent work!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because all retrieved nodes are irrelevant. For example, the first node in the retrieval contexts is irrelevant because it discusses controlling multiple motors on a single copter or using multiple joysticks, but it \"never addresses the user's specific question about controlling multiple separate drones with a single PX4 flight controller.\""
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output is unsupported by the provided context. The node(s) in retrieval context (1, 3, and 4) do not contain any information about PX4's limitation to one vehicle per controller or the use of swarm communication for multi-vehicle control."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "This is a perfect score! The response directly and completely answers the user's question without any irrelevant details. Excellent work!"
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.8888888888888888,
+          "passed": true,
+          "reason": "The score is 0.89 because the output incorrectly claims the Golang simulator is used for integrating physical hardware like a parachute, when the provided context states it is used for simulated sensor data."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the first and only node in the retrieval contexts is irrelevant. It only provides \"high-level summaries of forum threads\" and lacks the specific technical details about publishing to `vehicle_command` and attitude setpoint uORB topics required to answer the input."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output, sentence [1], which details publishing to `vehicle_command` and `attitude setpoint` uORB topics, could not be supported by any information within the provided nodes in the retrieval context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the response is perfectly tailored to the user's specific and technical question. It directly addresses how to create a custom flight behavior app in PX4 without including any irrelevant information."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.9090909090909091,
+          "passed": true,
+          "reason": "The score is 0.91 because the output incorrectly states that the PX4 build process generates files with an `.rtps` format, when the context only mentions the creation of `.bin`, `.elf`, and `.px4` files."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is a perfect 1.00! The first node is highly relevant as it discusses a similar issue titled 'Cannot build px4_fmu-v6c_rtps firmware...' and connects 'microRTPS' to 'FMU_v3', which directly addresses the user's problem."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output is unsupported by the retrieved context. Although node(s) in retrieval context 1, 2, and 4 mention related terms like RTPS and cmake, they lack the specific instructions from the first sentence, such as enabling RTPS in cmake or using the `make px4_fmu-v3_rtps` build command."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Fantastic work! The answer is perfectly relevant and directly addresses the user's specific technical question without any extra fluff."
+        }
+      ]
+    }
+  ]
+}

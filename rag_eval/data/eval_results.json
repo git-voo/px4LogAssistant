@@ -1,0 +1,207 @@
+{
+  "summary": {
+    "num_tests": 9,
+    "pass_rate": 0.1111111111111111,
+    "avg_score": 0.6418536324786325
+  },
+  "details": [
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.875,
+          "passed": true,
+          "reason": "The score is 0.88 because there is one contradiction: the actual output implies GPS signal quality instability during launch in Mission Mode was a factor, but this detail is not present in the retrieval context."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.7000000000000001,
+          "passed": true,
+          "reason": "The score is 0.70 because two relevant nodes appear after some irrelevant ones (nodes ranked 2 and 3), though all retrieved contexts contain useful information related to drone takeoff issues."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.2,
+          "passed": false,
+          "reason": "The score is 0.20 because while there's support for issues related to takeoff in mission mode (sentence about unintended mode change), none of the retrieval context node(s) directly address or confirm satisfaction of all safety checks mentioned, including arming conditions, GPS lock verification, and throttle confirmation."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.8333333333333334,
+          "passed": true,
+          "reason": "The score is 0.83 because the answer addresses general motor and propeller checks for instability but does not specifically tackle the issue of transitioning into Mission Mode or proper takeoff mechanics following a hand-launch."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.0 because there are no contradictions; the actual output perfectly aligns with the retrieval context."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because all nodes in the retrieval context are relevant ('yes') verdicts."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the retrieval context does not contain any information about mixing ESCs with different voltage ratings, which was a key point in the expected output."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.75,
+          "passed": true,
+          "reason": "The answer relevance score is 0.75 because while the response addressed that ESCs connect to FMU PWM pins via standard protocols and mentioned compatibility requirements (like voltage), it did not explicitly confirm whether connecting ESCs with different maximum voltage ratings would be safe or specify how to verify such compatibility for this specific Pixhawk model."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_1",
+      "success": false,
+      "error": "Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+      "metrics": []
+    },
+    {
+      "test_name": "test_case_2",
+      "success": false,
+      "error": "'dict' object has no attribute 'verdicts'",
+      "metrics": []
+    },
+    {
+      "test_name": "test_case_3",
+      "success": false,
+      "error": "Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+      "metrics": []
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.8,
+          "passed": true,
+          "reason": "The score is 0.80 because the output incorrectly combines two distinct issues from different users, merging a report of an unstable takeoff with a separate report of an unintended mode change during a hand launch."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00, which is a perfect score! The single node in the retrieval contexts is highly relevant to the user's query about a drone failing to take off in Mission Mode, as it directly addresses an \"'Unintended mode change while Takeoff'\" and contains crucial keywords like \"'[Theme] Takeoff Issue'\", \"'[Parameter] Mission Mode'\", and \"'[ActionCommand] Hand Launch'\". All retrieved information is perfectly ranked."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the expected output is entirely unsupported. Although node(s) in retrieval context [5] reference 'Mission Mode' and 'Takeoff', the specific safety checks mentioned in sentence [1] ('arming', 'GPS lock', 'throttle') are not found in any of the provided context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.9166666666666666,
+          "passed": true,
+          "reason": "The score is very high because the answer was highly relevant to the user's drone takeoff problem. It is not a perfect 1.0 because it made a specific assumption about the user's hardware and firmware, which was not mentioned in the input."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00 because the output is fully faithful to the retrieval context, with no contradictions found. Great job!"
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because all the retrieved nodes are irrelevant to the user's question about mixing ESCs with different maximum voltage ratings. The first node in the retrieval contexts discusses a 'PWM Frequency Mismatch', the second focuses on 'ESC Wiring on Pixhawk 6C mini', the third is about the specific wiring of a 'Tekko32 to Pixhawk 4 Power Port', the fourth is a 'Wiring Guide for Tekko32 ESC to Flight Controller', and the fifth discusses 'Hardware Compatibility' for a single ESC type. None of these address the safety implications of mixing ESCs with different voltage ratings."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the entire expected output, which warns against mixing ESCs with different voltage ratings, is completely unsupported by any of the nodes in the retrieval context."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "A perfect score! The response is entirely focused on answering the user's question without including any irrelevant details."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": false,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.75,
+          "passed": true,
+          "reason": "The score is 0.75 because the output incorrectly claims management is 'automatic' when it requires manual configuration, and wrongly states that FMU ports don't need a specific start command, which the context indicates may be necessary when using CAN."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the only retrieved node is irrelevant. The first node in the retrieval contexts mentions both '[HardwareModule] I/O PWM Output Ports' and '[HardwareModule] FMU PWM Output Ports (AUX)' but provides \"no information about the functional differences between them\", failing to answer the user's specific question."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 0.0,
+          "passed": false,
+          "reason": "The score is 0.00 because the expected output is entirely unsupported by the provided context. While the node(s) in retrieval context (1, 3, and 5) mention 'FMU PWM' and 'I/O PWM' ports, they lack the crucial information about 'DShot', the 'I/O co-processor', and 'standard PWM' that constitutes the entire sentence."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 1.0,
+          "passed": true,
+          "reason": "This is a perfect score! The response is entirely relevant and directly addresses the user's specific question about Pixhawk PWM outputs without any unnecessary information."
+        }
+      ]
+    },
+    {
+      "test_name": "test_case_0",
+      "success": true,
+      "metrics": [
+        {
+          "name": "Faithfulness",
+          "score": 0.8461538461538461,
+          "passed": true,
+          "reason": "The score is 0.85 because the output incorrectly formats the build command by passing the model name as a separate argument instead of appending it with an underscore. It also mistakenly links a 'Model Not Found' error to physical properties, when the context specifies the cause is a missing entry in the `sitl_target.cmake` file."
+        },
+        {
+          "name": "Contextual Precision",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00, a perfect score! The only retrieved node was highly relevant as it directly addresses using a 'SOLID (CAD Software)' model, corresponding to the user's query about SolidWorks, and discusses its integration into a simulation environment."
+        },
+        {
+          "name": "Contextual Recall",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The score is 1.00, which is excellent! The expected output is fully supported as it correctly synthesizes information from multiple nodes in retrieval context, including nodes [1], [2], [3], and [4]."
+        },
+        {
+          "name": "Answer Relevancy",
+          "score": 0.7333333333333333,
+          "passed": true,
+          "reason": "The score is 0.73 because while the output likely addressed the Gazebo and custom model aspects of the input, it failed to address the core requirement of a HITL (Hardware-In-The-Loop) simulation. Instead, it repeatedly provided irrelevant and incorrect information for SITL (Software-In-The-Loop), fundamentally misunderstanding the user's request."
+        }
+      ]
+    }
+  ]
+}

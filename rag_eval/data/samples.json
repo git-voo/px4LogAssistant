@@ -1,0 +1,15 @@
+[
+  {
+    "query": "Drone motors spin but it doesn’t take off",
+    "context": "Community experts suggested checking propeller orientation and motor direction.",
+    "response": "The propellers are likely reversed. Try swapping their orientation.",
+    "reference": "Root cause: propeller misalignment."
+  },
+  {
+    "query": "PX4 reports GPS lock but fails to arm",
+    "context": "Threads indicate a mismatch between EKF GPS origin and arming conditions.",
+    "response": "Ensure EKF origin is aligned with GPS fix before arming.",
+    "reference": "Solution: reinitialize EKF origin or wait for stable GPS fix."
+  }
+]
+

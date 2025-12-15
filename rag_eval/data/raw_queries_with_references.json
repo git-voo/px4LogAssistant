@@ -1,0 +1,446 @@
+[
+  {
+    "query": "After hand-launching my drone in Mission Mode, it fails to take off properly. What could be causing this issue?",
+    "reference": "Ensure the takeoff command is triggered correctly in mission mode and that the safety checks (arming, GPS lock, throttle) are satisfied."
+  },
+  {
+    "query": "Can I safely connect ESCs with different maximum voltage ratings to the FMU PWM output pins on my Pixhawk 4?",
+    "reference": "Avoid mixing ESCs with different voltage ratings; use ESCs rated for the same voltage to prevent power inconsistencies and damage."
+  },
+  {
+    "query": "What is the difference between FMU PWM outputs and I/O PWM outputs on a Pixhawk flight controller?",
+    "reference": "FMU PWM outputs come directly from the flight management unit and support DShot, while I/O PWM outputs are managed by the I/O co-processor and handle standard PWM."
+  },
+  {
+    "query": "How can I use my custom SolidWorks drone model in HITL simulation with Gazebo?",
+    "reference": "Export your SolidWorks model to a compatible SDF or URDF format and integrate it with Gazebo’s PX4 SITL configuration."
+  },
+  {
+    "query": "Which airframe configuration or outputs should I use to control a Carolina 16 skiff mounted on a clothesline mooring in tidal waters?",
+    "reference": "Use a boat or rover configuration in PX4 with appropriate actuator mappings for differential thrust or rudder-based control."
+  },
+  {
+    "query": "Is it possible to implement pivot turning for a skid-steering rover in PX4 similar to ArduPilot’s pivot turn feature?",
+    "reference": "PX4 does not natively support pivot turns, but similar behavior can be achieved by tuning waypoint navigation parameters and yaw control gains."
+  },
+  {
+    "query": "My hexacopter shows ‘Takeoff denied! (mav_cmd_nav_takeoff temporarily rejected)’ when I try to arm remotely. What could be the cause?",
+    "reference": "Check for pre-arm failures such as invalid GPS fix, geofence violation, or incorrect mode; resolve safety checks before issuing takeoff."
+  },
+  {
+    "query": "Can I set a maximum throttle limit when using DShot ESCs in PX4?",
+    "reference": "Yes, adjust the THR_MAX or PWM_MAX parameters to limit throttle output even when using DShot protocol."
+  },
+  {
+    "query": "QGroundControl cannot get an RTK fix from my Holybro F9P RTK modules. What could be wrong?",
+    "reference": "Verify base and rover configuration, check correction link (UART or USB), and ensure both modules share the same survey-in and RTCM settings."
+  },
+  {
+    "query": "How can I integrate an ESP32 with PX4 for GPS-independent urban navigation?",
+    "reference": "Use MAVLink over serial or Wi-Fi to exchange telemetry and position data between the ESP32 and PX4, ensuring proper MAVLink message handling."
+  },
+  
+  {
+    "query": "Why are the PX4 avoidance algorithms implemented as standalone modules instead of being integrated directly into the main flight stack?",
+    "reference": "They run as separate companion processes to maintain modularity and reduce computational load on the flight controller."
+  },
+  {
+    "query": "I'm getting a CMake error when trying to build older PX4 firmware tags. What could be wrong?",
+    "reference": "Ensure submodules are updated for that tag and use the matching toolchain version supported by the older release."
+  },
+  {
+    "query": "My drone spins uncontrollably in one direction during takeoff even though the motors and ESCs appear fine. What could cause this?",
+    "reference": "Check motor order and propeller orientation; incorrect setup causes yaw spin despite correct ESC operation."
+  },
+  {
+    "query": "On PX4 1.12.3 with a new quadcopter build, motor RPMs diverge during flight. What might cause uneven motor output?",
+    "reference": "Verify ESC calibration, PID tuning, and motor alignment; mismatched parameters can cause RPM imbalance."
+  },
+  {
+    "query": "My VTOL experiences a loss of global position and rolls over after transition in mission mode. What could cause this?",
+    "reference": "Electromagnetic interference or poor GNSS placement near power lines can disrupt compass data; relocate GPS and recalibrate sensors."
+  },
+  {
+    "query": "After updating the PX4 FMU V5 (STM32F765), my board continuously beeps and cannot complete setup. What might be wrong?",
+    "reference": "Flash the correct firmware build for your board variant and perform a clean parameter reset."
+  },
+  {
+    "query": "Why do I get 'Accel 0 clipping' warnings in QGroundControl when flying my drone?",
+    "reference": "Excessive vibration or mounting issues cause accelerometer clipping; use vibration damping and check mounting orientation."
+  },
+  {
+    "query": "Why do motor RPMs appear uneven on my NXP Hovergames quadcopter build?",
+    "reference": "Recalibrate ESCs and verify consistent thrust output; differences in calibration or wiring cause uneven RPMs."
+  },
+  {
+    "query": "How can I connect and use the PX4–ROS2 bridge with a Qualcomm Flight RB5 drone?",
+    "reference": "Install the PX4–ROS2 bridge with micro XRCE-DDS, ensure matching RTPS IDs, and configure the serial link between PX4 and ROS2."
+  },
+  {
+    "query": "My drone log shows 'no global position' errors during flight. What could cause this?",
+    "reference": "Loss of GPS signal or poor EKF initialization; ensure GPS visibility and verify EKF2_HGT_MODE and sensor fusion settings."
+  },
+  {
+    "query": "Is it possible to arm a quadcopter during free fall using PX4?",
+    "reference": "Arming during free fall is blocked by safety checks; modify failsafe and arming logic only for controlled experiments."
+  },
+  {
+    "query": "What is the L1 Controller in PX4 and how does it work for fixed-wing navigation?",
+    "reference": "L1 Controller manages lateral guidance by computing roll setpoints based on desired track and cross-track error."
+  },
+  {
+    "query": "How do I properly install and run PX4 with Gazebo simulation?",
+    "reference": "Build PX4 with the SITL target (e.g., make px4_sitl gazebo) and ensure Gazebo plugins are sourced correctly."
+  },
+  {
+    "query": "I’m setting up a new airframe on Pixhawk4. How do I configure it properly?",
+    "reference": "Select the correct airframe ID in QGroundControl and calibrate sensors, radio, and ESCs after flashing PX4."
+  },
+  {
+    "query": "My ESCs fail to start when using a LiPo battery, even though they worked previously. What could be wrong?",
+    "reference": "Verify power distribution and voltage levels; some ESCs require rearming after battery reconnection."
+  },
+  {
+    "query": "Where exactly should I add a custom line to a PX4 CMake file for a new application?",
+    "reference": "Add your module entry under the 'add_subdirectory' section in CMakeLists.txt within the apps directory."
+  },
+  {
+    "query": "My drone unexpectedly disarms during landing based on speed. Could this be a bug?",
+    "reference": "Check the COM_DISARM_LAND parameter; lower threshold may cause premature disarming."
+  },
+  {
+    "query": "How can I trigger a simulated survey camera to take pictures in Gazebo?",
+    "reference": "Use the MAV_CMD_IMAGE_START_CAPTURE command or QGroundControl survey mission to simulate image capture."
+  },
+  {
+    "query": "Arming is denied due to velocity/position invalid when using indoor navigation. How can I fix this?",
+    "reference": "Provide valid visual odometry or mocap input to /mavros/vision_pose/pose and enable EKF2_AID_MASK for external positioning."
+  },
+  {
+    "query": "How can I set up a rover in PX4 to run missions with RTK and QGroundControl?",
+    "reference": "Use the rover airframe, configure differential drive outputs, and verify GPS fix and mission waypoints in QGC."
+  },
+  
+  {
+    "query": "When installing PX4 for development, I get a 'ccatch permission denied' error. How can I fix this?",
+    "reference": "Run the installation with proper permissions or remove stale build files; ensure ccache is installed and writable."
+  },
+  {
+    "query": "How can I enable PWM AUX actuator outputs when using Hardware-in-the-Loop (HIL) simulation?",
+    "reference": "Enable the AUX outputs via SYS_USE_IO or control allocation parameters; HIL disables them by default."
+  },
+  {
+    "query": "After switching from Ardupilot to PX4 on Cube Orange, I get no current readings from the power module. Why?",
+    "reference": "Set the correct power monitor type in QGroundControl and verify the analog pin assignment for current sensing."
+  },
+  {
+    "query": "I built a new hexacopter but the motors won’t spin, and I’m seeing strange servo output values. What could cause this?",
+    "reference": "Verify mixer configuration, safety switch status, and SERVOx_MIN/MAX parameters."
+  },
+  {
+    "query": "I’m a PhD student developing a custom VTOL Tailsitter. Which PX4 firmware or setup should I use?",
+    "reference": "Start from the standard VTOL airframe; modify mixer and control surfaces in firmware for tailsitter configuration."
+  },
+  {
+    "query": "My Cube Orange with latest PX4 firmware shows 'Not Ready' and won’t initialize. What should I check?",
+    "reference": "Check GPS, accelerometer, and compass calibration; resolve any prearm check warnings in QGC."
+  },
+  {
+    "query": "How does PX4’s uORB messaging work under the hood as described in the uORB Explained Part 3 blog?",
+    "reference": "uORB implements a publish–subscribe pattern for inter-module communication within PX4’s middleware layer."
+  },
+  {
+    "query": "Why is my RFD868x-EU telemetry radio communication extremely slow?",
+    "reference": "Check air data rate and network ID settings; reduce retransmissions and ensure both radios share matching configuration."
+  },
+  {
+    "query": "What’s the most efficient way to detect illegally built structures using drones?",
+    "reference": "Use automated mapping with orthophoto stitching and AI-based change detection instead of manual inspection."
+  },
+  {
+    "query": "My drone hovers unstably in Offboard mode even with good position estimation. What might be wrong?",
+    "reference": "Ensure consistent Offboard setpoint frequency (≥2 Hz) and verify that velocity or position targets are smooth and valid."
+  },
+  {
+    "query": "After compiling PX4 from source, I see several firmware files generated. What are the differences between them?",
+    "reference": "They correspond to different hardware targets (FMUv2, v3, v5, etc.); each build includes binaries for specific board versions."
+  },
+  {
+    "query": "During flight tests with PX4 on a hexacopter, autotuning behaves unexpectedly. What could cause this?",
+    "reference": "Check motor balance, battery voltage, and ensure tuning is performed in stable wind-free conditions."
+  },
+  {
+    "query": "My precision landing setup in PX4 doesn’t seem to work. What should I check?",
+    "reference": "Verify landing target detection, enable LNDMC_LAND_TILT and related parameters, and check camera alignment."
+  },
+  {
+    "query": "How do I integrate an NRA15 altimeter with Pixhawk 4 over UART?",
+    "reference": "Use the PX4 driver for rangefinders, configure serial port and distance sensor type, and set RNGFND parameters."
+  },
+  {
+    "query": "My Cube Orange + Jetson Nano quadrotor oscillates after re-powering. Why does this happen?",
+    "reference": "Allow IMU temperature stabilization and recalibrate before flight; oscillation indicates unstable PID or sensor bias."
+  },
+  {
+    "query": "When sending MAVLink commands from a companion computer, how should I set target_system and component IDs?",
+    "reference": "Use target_system=1 and target_component=1 for PX4; use a unique source_system/component ID for the companion computer."
+  },
+  {
+    "query": "I can’t view video from the Typhoon H480 model in Gazebo. How can I fix this?",
+    "reference": "Ensure GStreamer and Gazebo camera plugins are installed; check the simulated video stream topic in SITL."
+  },
+  {
+    "query": "How can I record drone footage over a construction project to create a time-lapse video?",
+    "reference": "Automate flight missions with camera triggers, then post-process images into a time-lapse sequence."
+  },
+  {
+    "query": "How can I review PX4 flight logs in 3D using RViz?",
+    "reference": "Convert ULog data to ROS bag format and visualize flight paths using the /vehicle_odometry topic in RViz."
+  },
+  {
+    "query": "How can I integrate LiDAR on a fixed-wing VTOL drone for mapping?",
+    "reference": "Connect the LiDAR via UART or CAN, enable the driver, and sync sensor data with flight logs for mapping missions."
+  },
+
+  {
+    "query": "When arming, my drone shows 'Bad GPS Position' and refuses to arm. What could cause this?",
+    "reference": "Ensure GPS has a 3D fix and adequate satellites before arming; check antenna placement and signal strength."
+  },
+  {
+    "query": "How can I control a servo during an autonomous mission using Mission Planner or QGroundControl?",
+    "reference": "Use MAV_CMD_DO_SET_SERVO or DO_MOUNT_CONTROL in mission waypoints to set servo positions autonomously."
+  },
+  {
+    "query": "Can I use a 4-in-1 ESC board as a power management board with PX4?",
+    "reference": "Yes, but ensure proper current sensing and voltage regulation; connect the power module pins separately."
+  },
+  {
+    "query": "I can’t flash firmware to my Pixhawk 5x on macOS Catalina. How can I fix this?",
+    "reference": "Install DFU drivers or run QGroundControl with proper permissions; try flashing using `make px4_fmu-v5x_default upload`."
+  },
+  {
+    "query": "How can I change the default gravity value used by PX4?",
+    "reference": "Modify the `CONSTANTS_STD_GRAV` parameter in firmware and rebuild PX4."
+  },
+  {
+    "query": "How do I increase the sampling rate of a Holybro F9P RTK GPS module?",
+    "reference": "Use u-center to configure UBX-RATE messages and ensure PX4 GPS driver supports the desired output rate."
+  },
+  {
+    "query": "What is the relation between MAGx_ROT and the rotation (R) parameter in the magnetometer driver?",
+    "reference": "They both define sensor orientation; use only one consistently to avoid double rotation."
+  },
+  {
+    "query": "How can I run PX4 SITL within my custom ROS catkin workspace?",
+    "reference": "Build PX4 SITL separately, then source its setup script in your catkin workspace and launch via ROS launch files."
+  },
+  {
+    "query": "How can I move my PX4 drone forward, backward, left, and right using MAVROS commands?",
+    "reference": "Publish geometry_msgs/Twist messages to `/mavros/setpoint_velocity/cmd_vel` at ≥2 Hz while in OFFBOARD mode."
+  },
+  {
+    "query": "I’m having issues setting up HITL simulation with PX4. What could be wrong?",
+    "reference": "Ensure correct serial port mapping and disable SITL sensors; choose a supported HITL airframe in QGroundControl."
+  },
+  {
+    "query": "My quadrotor behaves poorly in Hold mode. How can I fix this?",
+    "reference": "Tune position and velocity PID gains and verify stable GPS and altitude sensor readings."
+  },
+  {
+    "query": "How can I write unit tests for PX4 SITL modules with independent test cases?",
+    "reference": "Use the `ut_run_test` framework and reset module state between test cases in `SITLTestRunner`."
+  },
+  {
+    "query": "Does PX4 FMUv5x support Crossfire or ExpressLRS receivers?",
+    "reference": "Yes, via CRSF serial port; configure RC protocol and inversion parameters in QGroundControl."
+  },
+  {
+    "query": "How can I perform HITL simulation with a fixed-wing model in Gazebo using a Pixhawk 5x?",
+    "reference": "Select a fixed-wing HITL airframe and connect Gazebo through MAVLink serial; disable internal sensors."
+  },
+  {
+    "query": "How can I configure two SimpleRTK2B modules for RTK + Heading with PX4?",
+    "reference": "Set one as base and the other as rover, enable heading output (UBX-NAV-RELPOSNED), and verify RTCM corrections."
+  },
+  {
+    "query": "How do I enable the control allocator module in PX4?",
+    "reference": "Set `SYS_CTRL_ALLOC=1` and define mixer geometry through the Control Allocation tab or YAML configuration."
+  },
+  {
+    "query": "How can I connect an FrSky R9MX receiver to a Pixhawk 4 flight controller?",
+    "reference": "Use the F.Port or S.Port pin, set `RC_PROTO=CRSF/SBUS`, and configure serial port inversion as needed."
+  },
+  {
+    "query": "What topics are discussed in uORB Explained Part 2 of the PX4 blog series?",
+    "reference": "It explains uORB topic registration, message structure, and the internal publish-subscribe mechanism."
+  },
+  {
+    "query": "Is the Pixhawk 2.4.8 flight controller fully supported by PX4?",
+    "reference": "Yes, but support is limited to FMUv2 target; flash the v2 firmware and note reduced memory for newer builds."
+  },
+  {
+    "query": "My Hexarotor X configuration shows unstable motor output on a Cube Orange. What might cause this?",
+    "reference": "Verify motor numbering and orientation; recalibrate ESCs and check for mismatched frame type settings."
+  },
+
+  {
+    "query": "How can I build PX4 SITL with a 32-bit configuration instead of 64-bit?",
+    "reference": "Use `-DCMAKE_TOOLCHAIN_FILE=posix_sitl_32bit.cmake` when running CMake, or compile with 32-bit flags manually."
+  },
+  {
+    "query": "What is the purpose of the PX4 Community Survey about getting started challenges?",
+    "reference": "It collects user feedback to improve documentation, onboarding, and community support for PX4 developers."
+  },
+  {
+    "query": "I want to buy ESCs for SunnySky XS X3515S motors. What specifications should I look for?",
+    "reference": "Choose ESCs rated for the same current and voltage range as the motors and supporting PWM or DShot protocol."
+  },
+  {
+    "query": "Why do I keep getting compass calibration warnings in PX4?",
+    "reference": "Run compass calibration away from magnetic interference and verify orientation parameters (MAGx_ROT)."
+  },
+  {
+    "query": "Which configuration, X or +, is better for a hexacopter in terms of stability and motor failure handling?",
+    "reference": "The X configuration offers better yaw control and stability; both behave similarly under motor failure with proper tuning."
+  },
+  {
+    "query": "I’m troubleshooting ADC readings in PX4. What could cause issues?",
+    "reference": "Confirm ADC channel mapping and power supply voltage; faulty wiring or scaling causes incorrect readings."
+  },
+  {
+    "query": "What should I know before my first VTOL flight using PX4?",
+    "reference": "Verify transition parameters (VT_TRANS_THR, FW_PSP_OFF), ensure ample altitude, and test transitions in calm wind."
+  },
+  {
+    "query": "Does PX4 support UAVCAN servo actuators for control surfaces?",
+    "reference": "Yes, enable UAVCAN v1 driver and assign servo node IDs and actuator outputs via parameters."
+  },
+  {
+    "query": "My drone suddenly flies off in one direction when using Vicon indoor tracking. What could be wrong?",
+    "reference": "Ensure Vicon data aligns with PX4 coordinate frame and timestamps; offset or latency causes drift."
+  },
+  {
+    "query": "Why does my drone climb unexpectedly when switching to LAND mode?",
+    "reference": "Set correct RTL_ALT and LAND_SPEED parameters; verify EKF height source and position validity."
+  },
+  {
+    "query": "How can I control a camera gimbal pitch using PWM through the Mount settings?",
+    "reference": "Configure MNT_MODE_IN=PWM and map the gimbal pitch servo to an auxiliary output channel."
+  },
+  {
+    "query": "How do I set my drone’s mass, inertia, and arm length parameters in PX4 for accurate flight control?",
+    "reference": "Adjust the airframe geometry in parameters or URDF and ensure correct mass/inertia values in the model configuration."
+  },
+  {
+    "query": "How does PX4 handle GPS loss and position failsafe behavior?",
+    "reference": "It triggers LOITER, ALTCTL, or LAND depending on COM_POSCTL_NAVL and NAV_DLL_ACT settings."
+  },
+  {
+    "query": "I’m having issues with ESC protocol on my QAV250 running PX4. What should I check?",
+    "reference": "Ensure ESCs use a supported protocol (PWM, OneShot, DShot) and that SERVOx_FUNCTION values match outputs."
+  },
+  {
+    "query": "My DC10 quad’s motors spin to the PWM_AUX_MAX value as soon as it arms. Why?",
+    "reference": "Verify SERVOx_MIN/MAX configuration and mixer scaling; incorrect PWM limits cause full-throttle output."
+  },
+  {
+    "query": "Can the PX4–ROS2 RTPS bridge control a real drone in offboard mode?",
+    "reference": "Yes, ensure reliable network transport and publish setpoints at ≥2 Hz using `OFFBOARD` mode."
+  },
+  {
+    "query": "Can I program PX4 flight logic directly from scratch?",
+    "reference": "Yes, by developing custom modules within PX4-Autopilot using C++ and integrating them via uORB messages."
+  },
+  {
+    "query": "How can I test the camera trigger function in PX4?",
+    "reference": "Run `camera_trigger test` in MAVLink shell or trigger via MAV_CMD_IMAGE_START_CAPTURE."
+  },
+  {
+    "query": "In mission mode, my drone switches to Position mode instead of landing. Why?",
+    "reference": "Check mission end condition and `NAV_DLL_ACT`; PX4 exits mission if landing sequence isn’t properly defined."
+  },
+  {
+    "query": "Why do I keep getting 'Preflight: not enough GPS satellites' when using fake_gps in SITL?",
+    "reference": "Increase fake_gps satellite count and ensure EKF2_GPS_CHECK and GPS checks are disabled in SITL."
+  },
+  {
+    "query": "Why does PX4 show 'Preflight Fail: Accel Range, hold still on arming'?",
+    "reference": "Ensure the vehicle is stationary during arming and recalibrate the accelerometer to correct range settings."
+  },
+  {
+    "query": "When running mission_test.py I get an ImportError. How can I fix this?",
+    "reference": "Install all PX4 Python dependencies via `pip install -r Tools/setup/requirements.txt` and set the correct PYTHONPATH."
+  },
+  {
+    "query": "Can a single telemetry module connect to two or more Ground Control Stations?",
+    "reference": "No, one telemetry link supports one MAVLink stream; use a secondary GCS via network bridge or MAVLink router."
+  },
+  {
+    "query": "Where can I find the Gazebo or SITL log files generated by PX4?",
+    "reference": "Logs are stored in `build/px4_sitl_default/tmp/rootfs/log/` or in the QGroundControl log download directory."
+  },
+  {
+    "query": "Does PX4 support the NMEA0183 GPS protocol for fake GPS data injection?",
+    "reference": "Yes, use the NMEA driver and send formatted NMEA sentences at 5–10 Hz over a serial or UDP connection."
+  },
+  {
+    "query": "In my swarm drone setup, one motor on the Cube Orange cuts out mid-flight. What could cause this?",
+    "reference": "Check motor and ESC wiring; inspect logs for overcurrent or thermal shutdown events."
+  },
+  {
+    "query": "Why is mc_weight calculated as a function of time during VTOL backward transition?",
+    "reference": "PX4 gradually shifts control authority from multicopter to fixed-wing using mc_weight over the transition period."
+  },
+  {
+    "query": "How can I start a mission over MAVLink without QGroundControl connected?",
+    "reference": "Use `MAV_CMD_MISSION_START` and ensure the mission is uploaded and current sequence index is set to 0."
+  },
+  {
+    "query": "How can I read the UI LED status of my Cube Orange VTOL over MAVLink?",
+    "reference": "Query SYS_STATUS or AUTOPILOT_STATE_FOR_GIMBAL messages to get LED and system state updates."
+  },
+  {
+    "query": "Why do I get the build error 'atomic is not lock-free for the given type T' on Raspberry Pi 4?",
+    "reference": "Update GCC to a newer version or disable lock-free atomics; some ARM targets lack hardware atomic support."
+  },
+  {
+    "query": "What topics are covered in uORB Explained Part 1 of the PX4 blog series?",
+    "reference": "It introduces uORB message passing, topic creation, and inter-module communication basics in PX4."
+  },
+  {
+    "query": "How can I make my VTOL maintain a small positive pitch while hovering and still use the pusher motor?",
+    "reference": "Adjust VT_PSHER_SLEW and VT_FW_PSP_OFF parameters to maintain slight nose-up attitude in hover."
+  },
+  {
+    "query": "Where can I download the PX4 Firmware v1.10.2 file for my Pixhawk 5?",
+    "reference": "Download the tagged release from the PX4 GitHub repository or build the v1.10.2 branch locally."
+  },
+  {
+    "query": "Can I control multiple drones with a single PX4 flight controller?",
+    "reference": "No, PX4 supports one vehicle per controller; use separate flight controllers and coordinate via swarm communication."
+  },
+  {
+    "query": "How can I create a custom flight behavior app in PX4 to perform a sequence like motor cutoff and parachute deploy?",
+    "reference": "Publish to `vehicle_command` and attitude setpoint uORB topics from a custom module to execute desired actions."
+  },
+  {
+    "query": "Why can’t I find px4_fmu-v3_rtps in my make targets list?",
+    "reference": "Enable RTPS in cmake config or build using `make px4_fmu-v3_rtps` after updating submodules."
+  },
+  {
+    "query": "How do CPU speed and RAM affect flight performance on different FCUs?",
+    "reference": "Faster CPUs and larger RAM improve sensor update rates and enable advanced modules like avoidance or RTPS."
+  },
+  {
+    "query": "What contents are copied from ROMFS to ROM in PX4, and how can I view them?",
+    "reference": "ROMFS stores default parameters and scripts; extract with `make romfs_copy` or view `ROMFS/px4fmu_common`."
+  },
+  {
+    "query": "Only one motor spins on my Pixhawk 5x setup. What could be wrong?",
+    "reference": "Verify mixer file and channel mapping; ensure safety switch and arming conditions are met."
+  },
+  {
+    "query": "How can I connect a mapping camera to the Swan K1 Pro via PWM?",
+    "reference": "Use a dedicated PWM output configured as camera_trigger and match the camera’s trigger voltage."
+  }
+]
