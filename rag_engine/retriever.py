@@ -4,7 +4,7 @@ from sentence_transformers import util
 from .embedder import Embedder
 
 class GraphRetriever:
-    def __init__(self, graph_path="all_threads_graphs_linked.json"):
+    def __init__(self, graph_path="rag_engine/all_threads_graphs_linked.json"):
         self.embedder = Embedder()
         self.graphs = self._load_graphs(graph_path)
         self.representations = self._build_graph_texts()

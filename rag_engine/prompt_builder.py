@@ -26,6 +26,6 @@ User query:
 Answer:"""
 
     print("\n🤖 Context being sent to the LLM:\n")
-    print(prompt)
+    # print(prompt)
 
     return prompt,context_text
